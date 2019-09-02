@@ -11,6 +11,9 @@ namespace SIS.HTTP.Headers
         {
             CoreValidator.ThrowIfNullOrEmpty(key, nameof(key));
             CoreValidator.ThrowIfNullOrEmpty(value, nameof(value));
+
+            this.Key = key;
+            this.Value = value;
         }
 
         public string Key { get; }

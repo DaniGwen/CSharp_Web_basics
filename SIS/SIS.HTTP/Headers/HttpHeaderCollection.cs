@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SIS.HTTP.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,29 +17,21 @@ namespace SIS.HTTP.Headers
 
         public void AddHeader(HttpHeader header)
         {
+            CoreValidator.ThrowIfNull(header, nameof(header));
             this.httpHeaders.Add(header.Key, header);
         }
 
         public bool ContainsHeader(string key)
         {
-            bool isContained = true;
+            CoreValidator.ThrowIfNullOrEmpty(key, nameof(key));
 
-            if (!httpHeaders.ContainsKey(key))
-            {
-                isContained = false;
-            }
-
-            return isContained;
+            return this.httpHeaders.ContainsKey(key);
         }
 
         public HttpHeader GetHeader(string key)
         {
-            if (httpHeaders.ContainsKey(key))
-            {
-                return (HttpHeader)httpHeaders.First(h => h.Key == key).Value;
-            }
-
-            return null;
+            CoreValidator.ThrowIfNullOrEmpty(key, nameof(key));
+            return this.httpHeaders[key];
         }
 
         public override string ToString()
