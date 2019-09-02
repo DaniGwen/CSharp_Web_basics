@@ -1,0 +1,9 @@
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\SIS.WebServer\bin\Debug\netstandard2.0\SIS.WebServer.deps.json
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\SIS.WebServer\bin\Debug\netstandard2.0\SIS.WebServer.dll
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\SIS.WebServer\bin\Debug\netstandard2.0\SIS.WebServer.pdb
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\SIS.WebServer\obj\Debug\netstandard2.0\SIS.WebServer.csprojAssemblyReference.cache
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\SIS.WebServer\obj\Debug\netstandard2.0\SIS.WebServer.csproj.CoreCompileInputs.cache
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\SIS.WebServer\obj\Debug\netstandard2.0\SIS.WebServer.AssemblyInfoInputs.cache
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\SIS.WebServer\obj\Debug\netstandard2.0\SIS.WebServer.AssemblyInfo.cs
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\SIS.WebServer\obj\Debug\netstandard2.0\SIS.WebServer.dll
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\SIS.WebServer\obj\Debug\netstandard2.0\SIS.WebServer.pdb
