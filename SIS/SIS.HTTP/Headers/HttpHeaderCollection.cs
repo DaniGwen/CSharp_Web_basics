@@ -43,6 +43,12 @@ namespace SIS.HTTP.Headers
 
         public override string ToString()
         {
+            var sb = new StringBuilder();
+
+            foreach (var header in this.headers)
+            {
+                sb.Append($"{header.Key} {header.Value}")
+            }
             return base.ToString(); 
         }
     }
