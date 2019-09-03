@@ -1,0 +1,14 @@
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\obj\Debug\netcoreapp2.1\Demo.App.csprojAssemblyReference.cache
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\obj\Debug\netcoreapp2.1\Demo.App.csproj.CoreCompileInputs.cache
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\obj\Debug\netcoreapp2.1\Demo.App.AssemblyInfoInputs.cache
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\obj\Debug\netcoreapp2.1\Demo.App.AssemblyInfo.cs
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\bin\Debug\netcoreapp2.1\Demo.App.deps.json
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\bin\Debug\netcoreapp2.1\Demo.App.runtimeconfig.json
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\bin\Debug\netcoreapp2.1\Demo.App.runtimeconfig.dev.json
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\bin\Debug\netcoreapp2.1\Demo.App.dll
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\bin\Debug\netcoreapp2.1\Demo.App.pdb
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\bin\Debug\netcoreapp2.1\SIS.HTTP.dll
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\bin\Debug\netcoreapp2.1\SIS.HTTP.pdb
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\obj\Debug\netcoreapp2.1\Demo.App.csproj.CopyComplete
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\obj\Debug\netcoreapp2.1\Demo.App.dll
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\obj\Debug\netcoreapp2.1\Demo.App.pdb

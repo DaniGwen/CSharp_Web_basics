@@ -18,6 +18,8 @@ namespace SIS.HTTP.Requests
             this.Headers = new HttpHeaderCollection();
             this.QueryData = new Dictionary<string, object>();
             this.FormData = new Dictionary<string, object>();
+
+            this.ParseRequest(requestString);
         }
 
         public string Path { get; private set; }
@@ -90,7 +92,7 @@ namespace SIS.HTTP.Requests
         private void ParseRequestParameters(string requestBody)
         {
             this.ParseRequestQueryParameters();
-            this.ParseRequestFormDataParameters(requestBody)
+            this.ParseRequestFormDataParameters(requestBody);
         }
 
         private void ParseRequestHeaders(string[] plainHeaders)
@@ -118,7 +120,7 @@ namespace SIS.HTTP.Requests
         {
             HttpRequestMethod method;
 
-            bool parseResult = HttpRequestMethod.TryParse(requestLineParams[0], out method);
+            bool parseResult = HttpRequestMethod.TryParse(requestLineParams[0], ignoreCase: true, out method);
 
             if (!parseResult)
             {
@@ -126,6 +128,11 @@ namespace SIS.HTTP.Requests
             }
 
             this.RequestMethod = method;
+        }
+
+        private string[] GetPlainRequestHeaders()
+        {
+
         }
     }
 }
