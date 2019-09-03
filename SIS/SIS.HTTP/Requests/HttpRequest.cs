@@ -63,7 +63,7 @@ namespace SIS.HTTP.Requests
             this.ParseRequestUrl(requestLineParams);
             this.ParseRequestPath();
 
-            this.ParseHeaders(splitRequestString.Skip(1).ToArray());
+            this.ParseRequestHeaders(splitRequestString.Skip(1).ToArray());
             //this.ParseCookies()
             this.ParseRequestParameters(splitRequestString[splitRequestString.Length - 1]);
         }
@@ -73,29 +73,36 @@ namespace SIS.HTTP.Requests
             throw new NotImplementedException();
         }
 
-        private void ParseHeaders(string[] v)
+        private void ParseRequestHeaders(string[] plainHeaders)
         {
-            throw new NotImplementedException();
+            plainHeaders.Select(plainHeader => plainHeader.Split(new[] { ':', ' ' }, StringSplitOptions.RemoveEmptyEntries))
+                .ToList()
+                .ForEach(headerKeyValuePair => this.Headers.AddHeader(new HttpHeader
+                (
+                   headerKeyValuePair[0],
+                   headerKeyValuePair[1]
+                )));
         }
 
         private void ParseRequestPath()
         {
-            throw new NotImplementedException();
+            this.Path = this.Url.Split('?')[0];
         }
 
         private void ParseRequestUrl(string[] requestLineParams)
         {
-            throw new NotImplementedException();
+            this.Url = requestLineParams[1];
         }
 
         private void ParseRequestMethod(string[] requestLineParams)
         {
             HttpRequestMethod method;
+
             bool parseResult = HttpRequestMethod.TryParse(requestLineParams[0], out method);
 
             if (!parseResult)
             {
-                throw new BadRequestException();
+                throw new BadRequestException(string.Format(GlobalConstants.UnsupportedHttpMethodExceptionMessage, requestLineParams[0]));
             }
 
             this.RequestMethod = method;
