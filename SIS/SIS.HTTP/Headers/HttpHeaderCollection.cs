@@ -34,15 +34,10 @@ namespace SIS.HTTP.Headers
             return this.httpHeaders[key];
         }
 
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
+        public override string ToString() => string.Join("\r\n",
+            this.httpHeaders
+            .Values
+            .Select(header => header.ToString()));
 
-            foreach (var header in this.httpHeaders)
-            {
-                sb.Append($"{header.ToString()}\r\n");
-            }
-            return sb.ToString(); 
-        }
     }
 }
