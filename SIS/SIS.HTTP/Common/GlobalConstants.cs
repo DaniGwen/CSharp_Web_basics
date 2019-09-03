@@ -11,5 +11,7 @@ namespace SIS.HTTP.Common
         public const string HostHeaderKey = "Host";
 
         public const string HttpNewLine = "\r\n";
+
+        public static IFormatProvider UnsupportedHttpMethodExceptionMessage { get; internal set; }
     }
 }

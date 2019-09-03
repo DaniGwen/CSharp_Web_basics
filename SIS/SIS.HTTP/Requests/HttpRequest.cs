@@ -68,9 +68,29 @@ namespace SIS.HTTP.Requests
             this.ParseRequestParameters(splitRequestString[splitRequestString.Length - 1]);
         }
 
-        private void ParseRequestParameters(string v)
+        private void ParseRequestQueryParameters()
         {
-            throw new NotImplementedException();
+            this.Url
+                .Split('?')[1]
+                .Split('&')
+                .Select(queryParameter => queryParameter.Split('='))
+                .ToList()
+                .ForEach(queryKeyValuePair => this.QueryData.Add(queryKeyValuePair[0], queryKeyValuePair[1]));
+        }
+        private void ParseRequestFormDataParameters(string requestBody)
+        {
+            requestBody
+                .Split('&')
+                .Select(queryParameter => queryParameter.Split('='))
+                .ToList()
+                .ForEach(queryKeyValuePair => this.FormData.Add(queryKeyValuePair[0], queryKeyValuePair[1]));
+
+            //TODO: Parse multiple parameters by Name 
+        }
+        private void ParseRequestParameters(string requestBody)
+        {
+            this.ParseRequestQueryParameters();
+            this.ParseRequestFormDataParameters(requestBody)
         }
 
         private void ParseRequestHeaders(string[] plainHeaders)
