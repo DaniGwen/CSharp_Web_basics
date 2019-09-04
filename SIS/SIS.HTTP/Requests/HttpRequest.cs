@@ -44,10 +44,10 @@ namespace SIS.HTTP.Requests
             return true;
         }
 
-        private bool IsValidRequestQueryString(string queryString, string[] queryParameters)
-        {
-            throw new NotImplementedException();
-        }
+        //private bool IsValidRequestQueryString(string queryString, string[] queryParameters)
+        //{
+        //    throw new NotImplementedException();
+        //}
         private void ParseRequest(string requestString)
         {
             string[] splitRequestString = requestString
@@ -65,7 +65,7 @@ namespace SIS.HTTP.Requests
             this.ParseRequestUrl(requestLineParams);
             this.ParseRequestPath();
 
-            this.ParseRequestHeaders(splitRequestString.Skip(1).ToArray());
+            this.ParseRequestHeaders(this.ParsePlainRequestHeaders(splitRequestString).ToArray());
             //this.ParseCookies()
             this.ParseRequestParameters(splitRequestString[splitRequestString.Length - 1]);
         }
@@ -73,7 +73,7 @@ namespace SIS.HTTP.Requests
         private void ParseRequestQueryParameters()
         {
             this.Url
-                .Split('?')[1]
+                .Split('?','#')[1]
                 .Split('&')
                 .Select(queryParameter => queryParameter.Split('='))
                 .ToList()
@@ -130,9 +130,15 @@ namespace SIS.HTTP.Requests
             this.RequestMethod = method;
         }
 
-        private string[] GetPlainRequestHeaders()
+        private IEnumerable<string> ParsePlainRequestHeaders(string[] requestLines)
         {
-
+            for (int i = 1; i < requestLines.Length - 1; i++)
+            {
+                if (!string.IsNullOrEmpty(requestLines[i]))
+                {
+                    yield return requestLines[i];
+                }
+            }
         }
     }
 }
