@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SIS.HTTP.Responses
+namespace SIS.HTTP.Responses.Contracts
 {
     public interface IHttpResponse
     {
