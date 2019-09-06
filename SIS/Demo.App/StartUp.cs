@@ -1,6 +1,10 @@
 ﻿using SIS.HTTP.Enums;
+using SIS.HTTP.Headers;
 using SIS.HTTP.Requests;
+using SIS.HTTP.Responses;
 using System;
+using System.Globalization;
+using System.Text;
 
 namespace Demo.App
 {
@@ -17,10 +21,16 @@ namespace Demo.App
 
             //HttpRequest httpRequest = new HttpRequest(request);
 
-            var statusCode = HttpResponseStatusCode.BadRequest;
+            //var statusCode = HttpResponseStatusCode.BadRequest;
 
-            Console.WriteLine((int)statusCode);
-            ;
+            //var httpResponse = new HttpResponse(HttpResponseStatusCode.BadRequest);
+            //httpResponse.AddHeader(new HttpHeader("Host", "localhost:4000"));
+            //httpResponse.AddHeader(new HttpHeader("Date", DateTime.Now.ToString(CultureInfo.InvariantCulture)));
+
+            //httpResponse.Content = Encoding.UTF8.GetBytes("<h1>Hi there!</h1>");
+
+            //Console.WriteLine(Encoding.UTF8.GetString(httpResponse.GetBytes()));
+            
         }
     }
 }

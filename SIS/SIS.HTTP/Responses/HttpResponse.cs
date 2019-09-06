@@ -5,6 +5,7 @@ using SIS.HTTP.Common;
 using SIS.HTTP.Enums;
 using SIS.HTTP.Headers;
 using SIS.HTTP.Responses.Contracts;
+using SIS.HTTP.Extensions;
 
 namespace SIS.HTTP.Responses
 {
@@ -16,7 +17,7 @@ namespace SIS.HTTP.Responses
             this.Content = new byte[0];
         }
 
-        public HttpResponse(HttpResponseStatusCode statusCode)
+        public HttpResponse(HttpResponseStatusCode statusCode) : this()
         {
             CoreValidator.ThrowIfNull(statusCode, nameof(statusCode));
             this.StatusCode = statusCode;
@@ -35,7 +36,22 @@ namespace SIS.HTTP.Responses
 
         public byte[] GetBytes()
         {
-            throw new NotImplementedException();
+            byte[] httpResponseBytesWithoutBody = Encoding.UTF8.GetBytes(this.ToString());
+            byte[] httpResponseBytesWithBody = new byte[httpResponseBytesWithoutBody.Length + this.Content.Length];
+
+            int currentIndex = 0;
+
+            for (int i = 0; i < httpResponseBytesWithoutBody.Length; i++)
+            {
+                httpResponseBytesWithBody[i] = httpResponseBytesWithoutBody[i];
+            }
+
+            for (int i = 0; i < httpResponseBytesWithBody.Length - httpResponseBytesWithoutBody.Length; i++)
+            {
+                httpResponseBytesWithBody[i + httpResponseBytesWithoutBody.Length] = this.Content[i];
+            }
+
+            return httpResponseBytesWithBody;
         }
 
         public override string ToString()
@@ -43,7 +59,7 @@ namespace SIS.HTTP.Responses
             StringBuilder result = new StringBuilder();
 
             result
-                .Append($"{GlobalConstants.HttpOneProtocolFragment} {this.StatusCode.}")
+                .Append($"{GlobalConstants.HttpOneProtocolFragment} {this.StatusCode.GetResponseCode()}")
                 .Append(GlobalConstants.HttpNewLine)
                 .Append(this.Headers)
                 .Append(GlobalConstants.HttpNewLine);
