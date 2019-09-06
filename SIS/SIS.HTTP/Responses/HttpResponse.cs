@@ -43,7 +43,7 @@ namespace SIS.HTTP.Responses
             StringBuilder result = new StringBuilder();
 
             result
-                .Append($"{GlobalConstants.HttpOneProtocolFragment} {(int)this.StatusCode} {this.StatusCode.ToString()}")
+                .Append($"{GlobalConstants.HttpOneProtocolFragment} {this.StatusCode.}")
                 .Append(GlobalConstants.HttpNewLine)
                 .Append(this.Headers)
                 .Append(GlobalConstants.HttpNewLine);

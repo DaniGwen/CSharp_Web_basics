@@ -5,9 +5,9 @@ using System.Text;
 
 namespace SIS.HTTP.Extensions
 {
-    public class HttpResponseStatusCodeExtension
+    public static class HttpResponseStatusCodeExtension
     {
-        public static string GetResponseCode(HttpResponseStatusCode statusCode)
+        public static string GetResponseCode(this HttpResponseStatusCode statusCode)
         {
             switch (statusCode)
             {
