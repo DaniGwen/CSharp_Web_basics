@@ -25,6 +25,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "SIS.HTTP/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "compile": {
+          "bin/placeholder/SIS.HTTP.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SIS.HTTP.dll": {}
+        }
       }
     }
   },
@@ -171,11 +181,17 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "SIS.HTTP/1.0.0": {
+      "type": "project",
+      "path": "../SIS.HTTP/SIS.HTTP.csproj",
+      "msbuildProject": "../SIS.HTTP/SIS.HTTP.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.3"
+      "NETStandard.Library >= 2.0.3",
+      "SIS.HTTP >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -207,7 +223,11 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\SIS\\SIS.HTTP\\SIS.HTTP.csproj": {
+              "projectPath": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\SIS\\SIS.HTTP\\SIS.HTTP.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -233,5 +253,16 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project SIS.HTTP is not compatible with netstandard2.0 (.NETStandard,Version=v2.0). Project SIS.HTTP supports: netcoreapp2.1 (.NETCoreApp,Version=v2.1)",
+      "libraryId": "SIS.HTTP",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }

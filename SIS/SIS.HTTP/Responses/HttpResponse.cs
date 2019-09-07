@@ -39,8 +39,6 @@ namespace SIS.HTTP.Responses
             byte[] httpResponseBytesWithoutBody = Encoding.UTF8.GetBytes(this.ToString());
             byte[] httpResponseBytesWithBody = new byte[httpResponseBytesWithoutBody.Length + this.Content.Length];
 
-            int currentIndex = 0;
-
             for (int i = 0; i < httpResponseBytesWithoutBody.Length; i++)
             {
                 httpResponseBytesWithBody[i] = httpResponseBytesWithoutBody[i];
