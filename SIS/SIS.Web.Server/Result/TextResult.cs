@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SIS.HTTP.Responses;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace SIS.WebServer.Result
 {
-    public class TextResult
+    public class TextResult : HttpResponse
     {
     }
 }

@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\SIS\\SIS.WebServer\\SIS.WebServer.csproj": {}
+    "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\SIS\\SIS.Web.Server\\SIS.Web.Server.csproj": {}
   },
   "projects": {
     "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\SIS\\SIS.HTTP\\SIS.HTTP.csproj": {
@@ -56,14 +56,14 @@
         }
       }
     },
-    "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\SIS\\SIS.WebServer\\SIS.WebServer.csproj": {
+    "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\SIS\\SIS.Web.Server\\SIS.Web.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\SIS\\SIS.WebServer\\SIS.WebServer.csproj",
-        "projectName": "SIS.WebServer",
-        "projectPath": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\SIS\\SIS.WebServer\\SIS.WebServer.csproj",
+        "projectUniqueName": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\SIS\\SIS.Web.Server\\SIS.Web.Server.csproj",
+        "projectName": "SIS.Web.Server",
+        "projectPath": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\SIS\\SIS.Web.Server\\SIS.Web.Server.csproj",
         "packagesPath": "C:\\Users\\thinkpad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\SIS\\SIS.WebServer\\obj\\",
+        "outputPath": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\SIS\\SIS.Web.Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -73,14 +73,14 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.0"
+          "netcoreapp2.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.0": {
+          "netcoreapp2.1": {
             "projectReferences": {
               "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\SIS\\SIS.HTTP\\SIS.HTTP.csproj": {
                 "projectPath": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\SIS\\SIS.HTTP\\SIS.HTTP.csproj"
@@ -95,12 +95,12 @@
         }
       },
       "frameworks": {
-        "netstandard2.0": {
+        "netcoreapp2.1": {
           "dependencies": {
-            "NETStandard.Library": {
+            "Microsoft.NETCore.App": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.0.3, )",
+              "version": "[2.1.0, )",
               "autoReferenced": true
             }
           },
