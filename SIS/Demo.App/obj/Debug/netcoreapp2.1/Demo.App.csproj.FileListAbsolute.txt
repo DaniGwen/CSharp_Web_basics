@@ -12,3 +12,5 @@ C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\bin\Debug\netcorea
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\obj\Debug\netcoreapp2.1\Demo.App.csproj.CopyComplete
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\obj\Debug\netcoreapp2.1\Demo.App.dll
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\obj\Debug\netcoreapp2.1\Demo.App.pdb
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\bin\Debug\netcoreapp2.1\SIS.Web.Server.dll
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\bin\Debug\netcoreapp2.1\SIS.Web.Server.pdb

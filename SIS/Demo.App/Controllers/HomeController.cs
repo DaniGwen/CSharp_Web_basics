@@ -1,4 +1,5 @@
-﻿using SIS.HTTP.Enums;
+﻿using Demo.App.Controllers;
+using SIS.HTTP.Enums;
 using SIS.HTTP.Headers;
 using SIS.HTTP.Requests;
 using SIS.HTTP.Responses;
@@ -10,13 +11,11 @@ using System.Text;
 
 namespace Demo.App
 {
-    class Program
+    public class HomeController : BaseController
     {
-        public IHttpResponse Index(HttpRequest request)
+        public IHttpResponse Home(HttpRequest request)
         {
-            string content = "<h1>Hi world!</h1>";
-
-            return new HtmlResult(content, HttpResponseStatusCode.Ok);
+            return this.View();
         }
     }
 }

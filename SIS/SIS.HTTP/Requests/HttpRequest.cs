@@ -34,6 +34,10 @@ namespace SIS.HTTP.Requests
 
         public HttpRequestMethod RequestMethod { get; private set; }
 
+        private bool HasQueryString()
+        {
+            return this.Url.Split('?').Length > 1;
+        }
         private bool IsValidRequestLine(string[] requestLineParams)
         {
             if (requestLineParams.Length != 3 || requestLineParams[2] != GlobalConstants.HttpOneProtocolFragment)
@@ -44,10 +48,12 @@ namespace SIS.HTTP.Requests
             return true;
         }
 
-        //private bool IsValidRequestQueryString(string queryString, string[] queryParameters)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        private bool IsValidRequestQueryString(string queryString, string[] queryParameters)
+        {
+            CoreValidator.ThrowIfNullOrEmpty(queryString, nameof(queryString));
+
+            return true;  //TODO Regex query string
+        }
         private void ParseRequest(string requestString)
         {
             string[] splitRequestString = requestString
@@ -72,21 +78,29 @@ namespace SIS.HTTP.Requests
 
         private void ParseRequestQueryParameters()
         {
-            this.Url
-                .Split('?','#')[1]
+            if (this.HasQueryString())
+            {
+                this.Url
+                .Split('?', '#')[1]
                 .Split('&')
                 .Select(queryParameter => queryParameter.Split('='))
                 .ToList()
                 .ForEach(queryKeyValuePair => this.QueryData.Add(queryKeyValuePair[0], queryKeyValuePair[1]));
+            }
         }
+
+        
+
         private void ParseRequestFormDataParameters(string requestBody)
         {
-            requestBody
+            if (!string.IsNullOrEmpty(requestBody))
+            {
+                requestBody
                 .Split('&')
                 .Select(queryParameter => queryParameter.Split('='))
                 .ToList()
                 .ForEach(queryKeyValuePair => this.FormData.Add(queryKeyValuePair[0], queryKeyValuePair[1]));
-
+            } 
             //TODO: Parse multiple parameters by Name 
         }
         private void ParseRequestParameters(string requestBody)

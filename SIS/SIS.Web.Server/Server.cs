@@ -25,6 +25,14 @@ namespace SIS.WebServer
             this.port = port;
             this.routingTable = routingTable;
             this.tcpListener = new TcpListener(IPAddress.Parse(LocalhostIpAddress), port);
+        }
+
+        public void Run()
+        {
+            this.tcpListener.Start();
+            this.isRunning = true;
+
+            Console.WriteLine($"Server started at {LocalhostIpAddress}:{this.port}");
 
             while (this.isRunning)
             {
@@ -34,14 +42,6 @@ namespace SIS.WebServer
 
                 this.Listen(client);
             }
-        }
-
-        public void Run()
-        {
-            this.tcpListener.Start();
-            this.isRunning = true;
-
-            Console.WriteLine($"Server started at {LocalhostIpAddress}:{this.port}");
         }
 
         public async Task Listen(Socket client)
