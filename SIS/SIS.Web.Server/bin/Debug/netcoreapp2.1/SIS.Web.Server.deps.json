@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v2.1": {
       "SIS.Web.Server/1.0.0": {
+        "dependencies": {
+          "SIS.HTTP": "1.0.0"
+        },
         "runtime": {
           "SIS.Web.Server.dll": {}
+        }
+      },
+      "SIS.HTTP/1.0.0": {
+        "runtime": {
+          "SIS.HTTP.dll": {}
         }
       }
     }
   },
   "libraries": {
     "SIS.Web.Server/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SIS.HTTP/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -7,3 +7,6 @@ C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\SIS.Web.Server\obj\Debug\ne
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\SIS.Web.Server\obj\Debug\netcoreapp2.1\SIS.Web.Server.AssemblyInfo.cs
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\SIS.Web.Server\obj\Debug\netcoreapp2.1\SIS.Web.Server.dll
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\SIS.Web.Server\obj\Debug\netcoreapp2.1\SIS.Web.Server.pdb
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\SIS.Web.Server\bin\Debug\netcoreapp2.1\SIS.HTTP.dll
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\SIS.Web.Server\bin\Debug\netcoreapp2.1\SIS.HTTP.pdb
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\SIS.Web.Server\obj\Debug\netcoreapp2.1\SIS.Web.Server.csproj.CopyComplete

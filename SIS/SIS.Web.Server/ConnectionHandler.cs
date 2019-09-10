@@ -97,7 +97,9 @@ namespace SIS.WebServer
 
         private void PrepareResponse(IHttpResponse httpResponse)
         {
+            byte[] byteSegments = httpResponse.GetBytes();
 
+            this.client.Send(byteSegments, SocketFlags.None);
         }
     }
 }

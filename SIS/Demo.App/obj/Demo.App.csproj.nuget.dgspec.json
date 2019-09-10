@@ -21,17 +21,20 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp2.0"
+          "netcoreapp2.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp2.0": {
+          "netcoreapp2.1": {
             "projectReferences": {
               "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\SIS\\SIS.HTTP\\SIS.HTTP.csproj": {
                 "projectPath": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\SIS\\SIS.HTTP\\SIS.HTTP.csproj"
+              },
+              "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\SIS\\SIS.Web.Server\\SIS.Web.Server.csproj": {
+                "projectPath": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\SIS\\SIS.Web.Server\\SIS.Web.Server.csproj"
               }
             }
           }
@@ -43,11 +46,11 @@
         }
       },
       "frameworks": {
-        "netcoreapp2.0": {
+        "netcoreapp2.1": {
           "dependencies": {
             "Microsoft.NETCore.App": {
               "target": "Package",
-              "version": "[2.0.0, )",
+              "version": "[2.1.0, )",
               "autoReferenced": true
             }
           },
@@ -85,6 +88,62 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\SIS\\SIS.Web.Server\\SIS.Web.Server.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\SIS\\SIS.Web.Server\\SIS.Web.Server.csproj",
+        "projectName": "SIS.Web.Server",
+        "projectPath": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\SIS\\SIS.Web.Server\\SIS.Web.Server.csproj",
+        "packagesPath": "C:\\Users\\thinkpad\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\SIS\\SIS.Web.Server\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\thinkpad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\SIS\\SIS.HTTP\\SIS.HTTP.csproj": {
+                "projectPath": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\SIS\\SIS.HTTP\\SIS.HTTP.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
