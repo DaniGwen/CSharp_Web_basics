@@ -13,10 +13,10 @@ namespace Demo.App.Controllers
     {
         public IHttpResponse View([CallerMemberName] string view = null)
         {
-            string controllerName = this.GetType().Name.Replace("Controller", string.Empty);
+            string controllerName = this.GetType().Name.Replace("Controllers", "Munio");
             string viewName = view;
 
-            string viewContent = File.ReadAllText(@"C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\Controllers\Views\Home\Home.html");
+            string viewContent = File.ReadAllText(@"C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\Views\" + controllerName + @"\" + viewName + ".html");
 
             return new HtmlResult(viewContent, HttpResponseStatusCode.Ok);
         }

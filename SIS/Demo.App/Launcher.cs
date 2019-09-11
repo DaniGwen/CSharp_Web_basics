@@ -1,4 +1,5 @@
-﻿using SIS.HTTP.Enums;
+﻿using Demo.App.Controllers;
+using SIS.HTTP.Enums;
 using SIS.HTTP.Requests;
 using SIS.Web.Server.Result;
 using SIS.Web.Server.Routing;
@@ -15,7 +16,7 @@ namespace Demo.App
         {
             IServerRoutingTable serverRoutingTable = new ServerRoutingTable();
 
-            serverRoutingTable.Add(HttpRequestMethod.Get, "/", request => new HomeController().Home((HttpRequest)request));
+            serverRoutingTable.Add(HttpRequestMethod.Get, "/", request => new HomeController().Home(request));
 
             Server server = new Server(8000, serverRoutingTable);
 

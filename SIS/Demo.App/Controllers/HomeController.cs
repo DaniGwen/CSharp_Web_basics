@@ -13,7 +13,7 @@ namespace Demo.App
 {
     public class HomeController : BaseController
     {
-        public IHttpResponse Home(HttpRequest request)
+        public IHttpResponse Home(IHttpRequest request)
         {
             return this.View();
         }
