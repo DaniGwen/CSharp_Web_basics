@@ -1,0 +1,11 @@
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\CSharp_Web_Basics\Asynchronous_Programming\Chronometer\bin\Debug\netcoreapp2.1\Chronometer.deps.json
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\CSharp_Web_Basics\Asynchronous_Programming\Chronometer\bin\Debug\netcoreapp2.1\Chronometer.runtimeconfig.json
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\CSharp_Web_Basics\Asynchronous_Programming\Chronometer\bin\Debug\netcoreapp2.1\Chronometer.runtimeconfig.dev.json
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\CSharp_Web_Basics\Asynchronous_Programming\Chronometer\bin\Debug\netcoreapp2.1\Chronometer.dll
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\CSharp_Web_Basics\Asynchronous_Programming\Chronometer\bin\Debug\netcoreapp2.1\Chronometer.pdb
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\CSharp_Web_Basics\Asynchronous_Programming\Chronometer\obj\Debug\netcoreapp2.1\Chronometer.csprojAssemblyReference.cache
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\CSharp_Web_Basics\Asynchronous_Programming\Chronometer\obj\Debug\netcoreapp2.1\Chronometer.csproj.CoreCompileInputs.cache
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\CSharp_Web_Basics\Asynchronous_Programming\Chronometer\obj\Debug\netcoreapp2.1\Chronometer.AssemblyInfoInputs.cache
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\CSharp_Web_Basics\Asynchronous_Programming\Chronometer\obj\Debug\netcoreapp2.1\Chronometer.AssemblyInfo.cs
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\CSharp_Web_Basics\Asynchronous_Programming\Chronometer\obj\Debug\netcoreapp2.1\Chronometer.dll
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\CSharp_Web_Basics\Asynchronous_Programming\Chronometer\obj\Debug\netcoreapp2.1\Chronometer.pdb
