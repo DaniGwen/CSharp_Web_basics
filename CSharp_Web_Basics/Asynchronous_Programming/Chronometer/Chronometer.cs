@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -57,7 +58,7 @@ namespace Chronometer
 
         public void Laps()
         {
-            Console.WriteLine(string.Join("\r\n",this.LapsList));
+            Console.WriteLine(string.Join("\r\n",this.LapsList.Select((lap,index) => $"{index}. {lap}")));
         }
 
         public void Time()
