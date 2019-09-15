@@ -9,6 +9,7 @@ using SIS.WebServer.Result;
 using System;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace SIS.WebServer
 {
@@ -27,17 +28,19 @@ namespace SIS.WebServer
             this.serverRoutingTable = serverRoutingTable;
         }
 
-        public void ProcessRequest()
+        public async Task ProcessRequestAsync()
         {
+            IHttpResponse httpResponse = null;
+
             try
             {
-                var httpRequest = this.ReadRequest();
+                IHttpRequest httpRequest = await this.ReadRequestAsync();
 
                 if (httpRequest != null)
                 {
                     Console.WriteLine($"Processing {httpRequest.RequestMethod} {httpRequest.Path}...");
 
-                    var httpResponse = this.HandleRequest(httpRequest);
+                    httpResponse = this.HandleRequest(httpRequest);
 
                     this.PrepareResponse(httpResponse);
                 }
@@ -54,14 +57,14 @@ namespace SIS.WebServer
             this.client.Shutdown(SocketShutdown.Both);
         }
 
-        private IHttpRequest ReadRequest()
+        private async Task<IHttpRequest> ReadRequestAsync()
         {
             var result = new StringBuilder();
             var data = new ArraySegment<byte>(new byte[1024]);
 
             while (true)
             {
-                int numberOfBytesRead = this.client.Receive(data.Array, SocketFlags.None);
+                int numberOfBytesRead = await this.client.ReceiveAsync(data, SocketFlags.None);
 
                 if (numberOfBytesRead == 0)
                 {

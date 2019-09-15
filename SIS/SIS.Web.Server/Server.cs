@@ -40,14 +40,15 @@ namespace SIS.WebServer
 
                 var client = this.tcpListener.AcceptSocket();
 
-                this.Listen(client);
+                Task.Run(() => this.Listen(client));
             }
         }
 
         public async Task Listen(Socket client)
         {
             var connectionHandler = new ConnectionHandler(client, this.routingTable);
-            connectionHandler.ProcessRequest();
+            await connectionHandler.ProcessRequestAsync();
         }
     }
 }
+ 

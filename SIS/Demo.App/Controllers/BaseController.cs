@@ -16,7 +16,8 @@ namespace Demo.App.Controllers
             string controllerName = this.GetType().Name.Replace("Controller", string.Empty);
             string viewName = view;
 
-            string viewContent = File.ReadAllText(@"C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\Views\" + controllerName + @"\" + viewName + ".html");
+            string viewContent = File
+                .ReadAllText(@"C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\Views\" + controllerName + "\\" + viewName + ".html");
 
             return new HtmlResult(viewContent, HttpResponseStatusCode.Ok);
         }
