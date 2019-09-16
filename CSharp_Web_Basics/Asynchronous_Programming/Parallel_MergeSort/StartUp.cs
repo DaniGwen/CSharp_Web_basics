@@ -6,7 +6,7 @@ namespace Parallel_MergeSort
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
     }
 }
