@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SIS.HTTP.Common;
+using SIS.HTTP.Cookies;
+using SIS.HTTP.Cookies.Contracts;
 using SIS.HTTP.Enums;
 using SIS.HTTP.Exceptions;
 using SIS.HTTP.Headers;
@@ -15,12 +17,15 @@ namespace SIS.HTTP.Requests
         {
             CoreValidator.ThrowIfNullOrEmpty(requestString, nameof(requestString));
 
+            this.Cookies = new HttpCookieCollection();
             this.Headers = new HttpHeaderCollection();
             this.QueryData = new Dictionary<string, object>();
             this.FormData = new Dictionary<string, object>();
 
             this.ParseRequest(requestString);
         }
+
+        public IHttpCookieCollection Cookies { get; set; }
 
         public string Path { get; private set; }
 
@@ -38,6 +43,7 @@ namespace SIS.HTTP.Requests
         {
             return this.Url.Split('?').Length > 1;
         }
+
         private bool IsValidRequestLine(string[] requestLineParams)
         {
             if (requestLineParams.Length != 3 || requestLineParams[2] != GlobalConstants.HttpOneProtocolFragment)
@@ -54,6 +60,7 @@ namespace SIS.HTTP.Requests
 
             return true;  //TODO Regex query string
         }
+
         private void ParseRequest(string requestString)
         {
             string[] splitRequestString = requestString
@@ -89,8 +96,6 @@ namespace SIS.HTTP.Requests
             }
         }
 
-        
-
         private void ParseRequestFormDataParameters(string requestBody)
         {
             if (!string.IsNullOrEmpty(requestBody))
@@ -103,6 +108,7 @@ namespace SIS.HTTP.Requests
             } 
             //TODO: Parse multiple parameters by Name 
         }
+
         private void ParseRequestParameters(string requestBody)
         {
             this.ParseRequestQueryParameters();
@@ -152,6 +158,18 @@ namespace SIS.HTTP.Requests
                 {
                     yield return requestLines[i];
                 }
+            }
+        }
+
+        private void ParseCookies()
+        {
+            
+
+            if (this.Headers.ContainsHeader(HttpHeader.Cookie))
+            {
+                var cookieHeader = this.Headers.GetHeader(HttpHeader.Cookie);
+                var cookie = new HttpCookie(cookieHeader.Key, cookieHeader.Value);
+                this.Cookies.AddCookie(cookie);
             }
         }
     }

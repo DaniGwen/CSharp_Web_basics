@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SIS.HTTP.Common;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,16 +11,20 @@ namespace SIS.HTTP.Cookies
 
         private const string HttpCookieDefaultPath = "/";
 
-        public HttpCookie(string key, string value, int expires, string path)
+        public HttpCookie(string key, string value, int expires = HttpCookieDefaultExpirationDay, string path = HttpCookieDefaultPath) : this(key, value, true, expires, path)
         {
-            expires = HttpCookieDefaultExpirationDay;
-            path = HttpCookieDefaultPath;
+             
         }
 
-        public HttpCookie(string key, string value, bool isNew, int expires, string path)
+        public HttpCookie(string key, string value, bool isNew, int expires = HttpCookieDefaultExpirationDay, string path = HttpCookieDefaultPath)
         {
-            expires = HttpCookieDefaultExpirationDay;
-            path = HttpCookieDefaultPath;
+            CoreValidator.ThrowIfNullOrEmpty(key, nameof(key));
+            CoreValidator.ThrowIfNullOrEmpty(value, nameof(value));
+
+            this.Key = key;
+            this.Value = value;
+            this.Path = path;
+            this.Expires = DateTime.UtcNow.AddDays(expires);
         }
 
         public string Key { get; set; }
@@ -36,8 +41,23 @@ namespace SIS.HTTP.Cookies
 
         public void Delete()
         {
-
+            this.Expires = DateTime.UtcNow.AddDays(-1);
         }
 
+        public override string ToString()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+
+            stringBuilder.Append($"{this.Key}= {this.Value}; Expires={this.Expires:R}");
+
+            if (this.HttpOnly)
+            {
+                stringBuilder.Append("; HttpOnly");
+            }
+
+            stringBuilder.Append($"; path={this.Path}");
+
+            return stringBuilder.ToString();
+        }
     }
 }
