@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SIS.HTTP.Common;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -12,11 +13,16 @@ namespace SIS.HTTP.Sessions
 
         public HttpSession(string id)
         {
-            this.Sessions
+            this.Id = id;
+
+            this.Sessions = new Dictionary<string, object>();
         }
         public void AddParameter(string name, object parameter)
         {
-            throw new NotImplementedException();
+            CoreValidator.ThrowIfNullOrEmpty(name, nameof(name));
+            CoreValidator.ThrowIfNull(parameter, nameof(parameter));
+
+            this.Sessions.Add(name, parameter);
         }
 
         public void ClearParameter()
