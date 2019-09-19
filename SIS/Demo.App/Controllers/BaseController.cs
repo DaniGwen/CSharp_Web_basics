@@ -1,4 +1,5 @@
-﻿using SIS.HTTP.Enums;
+﻿using SIS.HTTP.Cookies;
+using SIS.HTTP.Enums;
 using SIS.HTTP.Responses.Contracts;
 using SIS.Web.Server.Result;
 using System;
@@ -19,7 +20,11 @@ namespace Demo.App.Controllers
             string viewContent = File
                 .ReadAllText(@"C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\Views\" + controllerName + "\\" + viewName + ".html");
 
-            return new HtmlResult(viewContent, HttpResponseStatusCode.Ok);
+            HtmlResult htmlResult = new HtmlResult(viewContent, HttpResponseStatusCode.Ok);
+
+            htmlResult.Cookies.AddCookie(new HttpCookie("lang", "en"));
+
+            return htmlResult;
         }
     }
 }

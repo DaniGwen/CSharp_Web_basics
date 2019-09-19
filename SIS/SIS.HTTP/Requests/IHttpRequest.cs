@@ -1,4 +1,5 @@
-﻿using SIS.HTTP.Enums;
+﻿using SIS.HTTP.Cookies.Contracts;
+using SIS.HTTP.Enums;
 using SIS.HTTP.Headers;
 using System;
 using System.Collections.Generic;
@@ -19,5 +20,7 @@ namespace SIS.HTTP.Requests
         IHttpHeaderCollection Headers { get; }
 
         HttpRequestMethod RequestMethod { get; }
+
+        IHttpCookieCollection Cookies { get; }
     }
 }

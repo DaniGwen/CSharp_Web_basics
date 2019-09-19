@@ -52,5 +52,17 @@ namespace SIS.HTTP.Cookies
         {
             return GetEnumerator();
         }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+
+            foreach (var cookie in this.httpCookies.Values)
+            {
+                sb.Append($"Set-Cookie: {cookie}").Append(GlobalConstants.HttpNewLine);
+            }
+
+            return sb.ToString();
+        }
     }
 }

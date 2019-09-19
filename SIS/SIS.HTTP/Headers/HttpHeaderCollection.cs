@@ -34,7 +34,7 @@ namespace SIS.HTTP.Headers
             return this.httpHeaders[key];
         }
 
-        public override string ToString() => string.Join("\r\n",
+        public override string ToString() => string.Join(GlobalConstants.HttpNewLine,
             this.httpHeaders
             .Values
             .Select(header => header.ToString()));

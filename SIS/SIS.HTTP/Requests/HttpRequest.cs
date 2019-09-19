@@ -105,7 +105,7 @@ namespace SIS.HTTP.Requests
                 .Select(queryParameter => queryParameter.Split('='))
                 .ToList()
                 .ForEach(queryKeyValuePair => this.FormData.Add(queryKeyValuePair[0], queryKeyValuePair[1]));
-            } 
+            }
             //TODO: Parse multiple parameters by Name 
         }
 
@@ -163,13 +163,22 @@ namespace SIS.HTTP.Requests
 
         private void ParseCookies()
         {
-            
+
 
             if (this.Headers.ContainsHeader(HttpHeader.Cookie))
             {
-                var cookieHeader = this.Headers.GetHeader(HttpHeader.Cookie);
-                var cookie = new HttpCookie(cookieHeader.Key, cookieHeader.Value);
-                this.Cookies.AddCookie(cookie);
+                var value = this.Headers.GetHeader(HttpHeader.Cookie).Value;
+
+                string[] notParsedCookies = value.Split("; ", StringSplitOptions.RemoveEmptyEntries);
+
+                foreach (string notParsedCookie in notParsedCookies)
+                {
+                    string[] cookieKeyValuePair = notParsedCookie.Split("=", 2);
+
+                    var cookie = new HttpCookie(cookieKeyValuePair[0], cookieKeyValuePair[1], false);
+
+                    this.Cookies.AddCookie(cookie);
+                }
             }
         }
     }

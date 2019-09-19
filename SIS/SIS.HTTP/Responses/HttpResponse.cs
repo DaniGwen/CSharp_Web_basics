@@ -6,6 +6,8 @@ using SIS.HTTP.Enums;
 using SIS.HTTP.Headers;
 using SIS.HTTP.Responses.Contracts;
 using SIS.HTTP.Extensions;
+using SIS.HTTP.Cookies;
+using SIS.HTTP.Cookies.Contracts;
 
 namespace SIS.HTTP.Responses
 {
@@ -21,10 +23,14 @@ namespace SIS.HTTP.Responses
         {
             CoreValidator.ThrowIfNull(statusCode, nameof(statusCode));
             this.StatusCode = statusCode;
+            this.Cookies = new HttpCookieCollection();
         }
+
+        public IHttpCookieCollection Cookies { get; set; }
+
         public HttpResponseStatusCode StatusCode { get; set; }
 
-        public HttpHeaderCollection Headers { get; }
+        public IHttpHeaderCollection Headers { get; }
 
         public byte[] Content { get; set; }
 
@@ -62,6 +68,10 @@ namespace SIS.HTTP.Responses
                 .Append(this.Headers)
                 .Append(GlobalConstants.HttpNewLine);
 
+            if (this.Cookies.HasCookies())
+            {
+                result.Append($"{this.Cookies}").Append(GlobalConstants.HttpNewLine);
+            }
             result.Append(GlobalConstants.HttpNewLine);
 
             return result.ToString();
