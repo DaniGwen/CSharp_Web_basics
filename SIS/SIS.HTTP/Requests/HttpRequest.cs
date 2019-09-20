@@ -8,6 +8,7 @@ using SIS.HTTP.Cookies.Contracts;
 using SIS.HTTP.Enums;
 using SIS.HTTP.Exceptions;
 using SIS.HTTP.Headers;
+using SIS.HTTP.Sessions;
 
 namespace SIS.HTTP.Requests
 {
@@ -25,6 +26,7 @@ namespace SIS.HTTP.Requests
             this.ParseRequest(requestString);
         }
 
+
         public IHttpCookieCollection Cookies { get; set; }
 
         public string Path { get; private set; }
@@ -38,6 +40,10 @@ namespace SIS.HTTP.Requests
         public IHttpHeaderCollection Headers { get; }
 
         public HttpRequestMethod RequestMethod { get; private set; }
+
+        public IHttpSession Session { get; set; }
+
+
 
         private bool HasQueryString()
         {

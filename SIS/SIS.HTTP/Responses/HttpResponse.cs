@@ -34,6 +34,13 @@ namespace SIS.HTTP.Responses
 
         public byte[] Content { get; set; }
 
+        public void AddCookie(HttpCookie httpCookie)
+        {
+            CoreValidator.ThrowIfNull(httpCookie, nameof(httpCookie));
+
+            this.Cookies.AddCookie(httpCookie);
+        }
+
         public void AddHeader(HttpHeader header)
         {
             CoreValidator.ThrowIfNull(header, nameof(header));

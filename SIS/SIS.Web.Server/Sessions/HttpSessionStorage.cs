@@ -13,7 +13,7 @@ namespace SIS.HTTP.Sessions
         
         public static IHttpSession GetSession(string id)
         {
-            return sessions.GetOrAdd(id, X => new HttpSession(id));
+            return sessions.GetOrAdd(id, _ => new HttpSession(id));
         }
     }
 }
