@@ -9,35 +9,39 @@ namespace SIS.HTTP.Sessions
     {
         public string Id { get; }
 
-        private Dictionary<string, object> Sessions;
+        private readonly Dictionary<string, object> SessionParameters;
 
         public HttpSession(string id)
         {
             this.Id = id;
 
-            this.Sessions = new Dictionary<string, object>();
+            this.SessionParameters = new Dictionary<string, object>();
         }
         public void AddParameter(string name, object parameter)
         {
             CoreValidator.ThrowIfNullOrEmpty(name, nameof(name));
             CoreValidator.ThrowIfNull(parameter, nameof(parameter));
 
-            this.Sessions.Add(name, parameter);
+            this.SessionParameters[name] = parameter;
         }
 
         public void ClearParameter()
         {
-            throw new NotImplementedException();
+            this.SessionParameters.Clear();
         }
 
         public bool ContainsParameter(string name)
         {
-            throw new NotImplementedException();
+            CoreValidator.ThrowIfNullOrEmpty(name, nameof(name));
+
+            return SessionParameters.ContainsKey(name);
         }
 
         public object GetParameter(string name)
         {
-            throw new NotImplementedException();
+            CoreValidator.ThrowIfNullOrEmpty(name, nameof(name));
+
+            return this.SessionParameters[name]; 
         }
     }
 }
