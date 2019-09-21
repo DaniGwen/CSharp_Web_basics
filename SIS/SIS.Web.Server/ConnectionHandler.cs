@@ -45,24 +45,24 @@ namespace SIS.WebServer
             else
             {
                 sessionId = Guid.NewGuid().ToString();
-                httpRequest.Session = HttpSessionStorage.GetSession(sessionId);
             }
 
-            return sessionId;
+            httpRequest.Session = HttpSessionStorage.GetSession(sessionId);
+
+            return httpRequest.Session.Id;
         }
 
         private void SetResponceSession(IHttpResponse httpResponse, string sessionId)
         {
             if (sessionId != null)
             {
-                httpResponse.AddCookie(new HttpCookie(HttpSessionStorage.SessionCookieKey, sessionId));
+                httpResponse.Cookies
+                    .AddCookie(new HttpCookie(HttpSessionStorage.SessionCookieKey, sessionId));
             }
         }
 
         public async Task ProcessRequestAsync()
         {
-            IHttpResponse httpResponse = null;
-
             try
             {
                 IHttpRequest httpRequest = await this.ReadRequestAsync();
@@ -71,7 +71,11 @@ namespace SIS.WebServer
                 {
                     Console.WriteLine($"Processing {httpRequest.RequestMethod} {httpRequest.Path}...");
 
-                    httpResponse = this.HandleRequest(httpRequest);
+                    var sessionId = this.SetRequestSession(httpRequest);
+
+                    var httpResponse = this.HandleRequest(httpRequest);
+
+                    this.SetResponceSession(httpResponse, sessionId);
 
                     this.PrepareResponse(httpResponse);
                 }

@@ -123,7 +123,7 @@ namespace SIS.HTTP.Requests
 
         private void ParseRequestHeaders(string[] plainHeaders)
         {
-            plainHeaders.Select(plainHeader => plainHeader.Split(new[] { ':', ' ' }, StringSplitOptions.RemoveEmptyEntries))
+            plainHeaders.Select(plainHeader => plainHeader.Split(new[] { ": "}, StringSplitOptions.RemoveEmptyEntries))
                 .ToList()
                 .ForEach(headerKeyValuePair => this.Headers.AddHeader(new HttpHeader
                 (
