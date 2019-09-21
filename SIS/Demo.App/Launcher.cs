@@ -16,7 +16,13 @@ namespace Demo.App
         {
             IServerRoutingTable serverRoutingTable = new ServerRoutingTable();
 
+            //[GET] Mappings
+
             serverRoutingTable.Add(HttpRequestMethod.Get, "/", request => new HomeController().Home(request));
+
+
+            //[POST] Mappings
+
 
             Server server = new Server(8000, serverRoutingTable);
 

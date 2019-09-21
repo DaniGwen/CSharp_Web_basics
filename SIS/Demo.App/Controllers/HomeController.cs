@@ -15,6 +15,8 @@ namespace Demo.App
     {
         public IHttpResponse Home(IHttpRequest request)
         {
+            this.httpRequest = request;
+
             return this.View();
         }
     }

@@ -17,6 +17,7 @@ namespace SIS.HTTP.Sessions
 
             this.SessionParameters = new Dictionary<string, object>();
         }
+
         public void AddParameter(string name, object parameter)
         {
             CoreValidator.ThrowIfNullOrEmpty(name, nameof(name));

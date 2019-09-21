@@ -3,3 +3,6 @@ C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Data\bin\Debug\netcore
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Data\obj\Debug\netcoreapp2.1\Demo.Data.csproj.CoreCompileInputs.cache
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Data\obj\Debug\netcoreapp2.1\Demo.Data.AssemblyInfoInputs.cache
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Data\obj\Debug\netcoreapp2.1\Demo.Data.AssemblyInfo.cs
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Data\obj\Debug\netcoreapp2.1\Demo.Data.csprojAssemblyReference.cache
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Data\bin\Debug\netcoreapp2.1\Demo.Data.runtimeconfig.json
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Data\bin\Debug\netcoreapp2.1\Demo.Data.runtimeconfig.dev.json

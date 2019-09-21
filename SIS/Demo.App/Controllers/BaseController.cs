@@ -1,5 +1,6 @@
 ﻿using SIS.HTTP.Cookies;
 using SIS.HTTP.Enums;
+using SIS.HTTP.Requests;
 using SIS.HTTP.Responses.Contracts;
 using SIS.Web.Server.Result;
 using System;
@@ -12,6 +13,20 @@ namespace Demo.App.Controllers
 {
     public abstract class BaseController
     {
+        protected IHttpRequest httpRequest { get; set; }
+
+        protected bool IsLoggedIn()
+        {
+            return this.httpRequest.Session.ContainsParameter("username");
+        }
+
+        private string ParseTamplate(string viewContent)
+        {
+            if (this.IsLoggedIn())
+            {
+                return viewContent.Replace("@Model.HelloMessage", $"");
+            }
+        }
         public IHttpResponse View([CallerMemberName] string view = null)
         {
             string controllerName = this.GetType().Name.Replace("Controller", string.Empty);
