@@ -1,0 +1,5 @@
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Data\bin\Debug\netcoreapp2.1\Demo.Data.deps.json
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Data\bin\Debug\netcoreapp2.1\Demo.Data.dll
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Data\obj\Debug\netcoreapp2.1\Demo.Data.csproj.CoreCompileInputs.cache
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Data\obj\Debug\netcoreapp2.1\Demo.Data.AssemblyInfoInputs.cache
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Data\obj\Debug\netcoreapp2.1\Demo.Data.AssemblyInfo.cs
