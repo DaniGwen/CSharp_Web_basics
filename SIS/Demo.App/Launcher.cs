@@ -18,7 +18,7 @@ namespace Demo.App
 
             //[GET] Mappings
 
-            serverRoutingTable.Add(HttpRequestMethod.Get, "/", request => new HomeController().Home(request));
+            serverRoutingTable.Add(HttpRequestMethod.Get, "/", request => new HomeController().Index(request));
 
 
             //[POST] Mappings

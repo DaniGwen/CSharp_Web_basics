@@ -20,13 +20,13 @@ namespace Demo.App.Controllers
             return this.httpRequest.Session.ContainsParameter("username");
         }
 
-        private string ParseTamplate(string viewContent)
-        {
-            if (this.IsLoggedIn())
-            {
-                return viewContent.Replace("@Model.HelloMessage", $"");
-            }
-        }
+        //private string ParseTamplate(string viewContent)
+        //{
+        //    if (this.IsLoggedIn())
+        //    {
+        //        return viewContent.Replace("@Model.HelloMessage", $"");
+        //    }
+        //}
         public IHttpResponse View([CallerMemberName] string view = null)
         {
             string controllerName = this.GetType().Name.Replace("Controller", string.Empty);

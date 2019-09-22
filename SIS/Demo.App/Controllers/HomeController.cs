@@ -13,7 +13,7 @@ namespace Demo.App
 {
     public class HomeController : BaseController
     {
-        public IHttpResponse Home(IHttpRequest request)
+        public IHttpResponse Index(IHttpRequest request)
         {
             this.httpRequest = request;
 
