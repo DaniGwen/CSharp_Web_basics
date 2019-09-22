@@ -4,6 +4,7 @@ using SIS.HTTP.Requests;
 using SIS.HTTP.Responses.Contracts;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Demo.App.Controllers
@@ -21,9 +22,19 @@ namespace Demo.App.Controllers
             {
                 string username = httpRequest.FormData["username"].ToString();
                 string password = httpRequest.FormData["password"].ToString();
-                    
-                User user = dbContext.Users.
+
+                User user = dbContext.Users
+                    .SingleOrDefault(u => u.Username == username && u.Password == password);
+
+                if (user == null)
+                {
+                    this.Redirect("/login");
+                }
+
+                httpRequest.Session.AddParameter("username", user.Username);
             }
+
+            return this.Redirect("/home");
         }
 
         public IHttpResponse Register(IHttpRequest httpRequest)

@@ -13,9 +13,21 @@ namespace Demo.App
 {
     public class HomeController : BaseController
     {
-        public IHttpResponse Index(IHttpRequest request)
+        public HomeController(IHttpRequest request)
         {
             this.httpRequest = request;
+        }
+        public IHttpResponse Index(IHttpRequest request)
+        {
+            return this.View();
+        }
+
+        public IHttpResponse Home(IHttpRequest httpRequest)
+        {
+            if (!this.IsLoggedIn())
+            {
+                return this.Redirect("/users/login");
+            }
 
             return this.View();
         }

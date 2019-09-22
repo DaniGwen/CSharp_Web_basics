@@ -15,18 +15,22 @@ namespace Demo.App.Controllers
     {
         protected IHttpRequest httpRequest { get; set; }
 
+        protected Dictionary<string, object> viewData = new Dictionary<string, object>();
+
         protected bool IsLoggedIn()
         {
             return this.httpRequest.Session.ContainsParameter("username");
         }
 
-        //private string ParseTamplate(string viewContent)
-        //{
-        //    if (this.IsLoggedIn())
-        //    {
-        //        return viewContent.Replace("@Model.HelloMessage", $"");
-        //    }
-        //}
+        private string ParseTamplate(string viewContent)    
+        {
+            foreach (var param in viewData)
+            {
+                viewContent = viewContent.Replace($"@Model.{param.Key}", param.Value.ToString());
+            }
+
+            return viewContent;
+        }
         public IHttpResponse View([CallerMemberName] string view = null)
         {
             string controllerName = this.GetType().Name.Replace("Controller", string.Empty);
@@ -34,6 +38,8 @@ namespace Demo.App.Controllers
 
             string viewContent = File
                 .ReadAllText(@"C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\Views\" + controllerName + "\\" + viewName + ".html");
+
+            viewContent = this.ParseTamplate(viewContent);
 
             HtmlResult htmlResult = new HtmlResult(viewContent, HttpResponseStatusCode.Ok);
 

@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Demo.Data
 {
-    class ConnectionConfig
+    public class ConnectionConfig
     {
+        internal static string ConnectionString = "Server=.\\SQLEXPRESS;Database=DemoDB;Integrated Security=true";
     }
 }
