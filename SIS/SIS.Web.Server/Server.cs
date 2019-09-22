@@ -38,7 +38,7 @@ namespace SIS.WebServer
             {
                 Console.WriteLine($"waiting for client...");
 
-                var client = this.tcpListener.AcceptSocket();
+                Socket client = this.tcpListener.AcceptSocket();
 
                 Task.Run(() => this.Listen(client));
             }
