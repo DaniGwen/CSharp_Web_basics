@@ -1,4 +1,5 @@
 ﻿using Demo.App.Controllers;
+using SIS.HTTP.Cookies;
 using SIS.HTTP.Enums;
 using SIS.HTTP.Headers;
 using SIS.HTTP.Requests;
@@ -19,7 +20,14 @@ namespace Demo.App
         }
         public IHttpResponse Index(IHttpRequest request)
         {
-            return this.View();
+            IHttpResponse newResponse = new HttpResponse();
+
+            HttpCookie cookie = new HttpCookie("lang", "en");
+            cookie.Delete();
+
+            newResponse.AddCookie(cookie);
+
+            return newResponse;
         }
 
         public IHttpResponse Home(IHttpRequest httpRequest)

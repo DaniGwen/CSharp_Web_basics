@@ -6,6 +6,6 @@ namespace Demo.Data
 {
     public class ConnectionConfig
     {
-        internal static string ConnectionString = "Server=.\\SQLEXPRESS;Database=DemoDB;Integrated Security=true";
+        internal static string ConnectionString = @"Server=.\SQLEXPRESS;Database=DemoDB;Integrated Security=true";
     }
 }

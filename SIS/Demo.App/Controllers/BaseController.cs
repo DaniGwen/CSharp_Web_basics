@@ -47,5 +47,10 @@ namespace Demo.App.Controllers
 
             return htmlResult;
         }
+
+        public IHttpResponse Redirect(string url)
+        {
+            return new RedirectResult(url);
+        }
     }
 }

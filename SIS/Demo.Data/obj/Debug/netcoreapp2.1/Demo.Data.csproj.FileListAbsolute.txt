@@ -6,3 +6,9 @@ C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Data\obj\Debug\netcore
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Data\obj\Debug\netcoreapp2.1\Demo.Data.csprojAssemblyReference.cache
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Data\bin\Debug\netcoreapp2.1\Demo.Data.runtimeconfig.json
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Data\bin\Debug\netcoreapp2.1\Demo.Data.runtimeconfig.dev.json
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Data\bin\Debug\netcoreapp2.1\Demo.Data.pdb
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Data\bin\Debug\netcoreapp2.1\Demo.Models.dll
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Data\bin\Debug\netcoreapp2.1\Demo.Models.pdb
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Data\obj\Debug\netcoreapp2.1\Demo.Data.csproj.CopyComplete
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Data\obj\Debug\netcoreapp2.1\Demo.Data.dll
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Data\obj\Debug\netcoreapp2.1\Demo.Data.pdb

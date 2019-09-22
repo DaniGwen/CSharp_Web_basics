@@ -19,27 +19,34 @@ namespace Demo.App
             //[GET] Mappings
 
             serverRoutingTable
-                .Add(HttpRequestMethod.Get, "/", request => new HomeController(request).Index(request));
+                .Add(HttpRequestMethod.Get, "/", request => new HomeController(request)
+                .Index(request));
 
             serverRoutingTable
-                .Add(HttpRequestMethod.Get, "/users/login", request => new UsersController().Login(request));
+                .Add(HttpRequestMethod.Get, "/users/login", httpRequest => new UsersController()
+                .Login(httpRequest));
 
             serverRoutingTable
-                .Add(HttpRequestMethod.Get, "/users/register", request => new UsersController().Register(request));
+                .Add(HttpRequestMethod.Get, "/users/register", httpRequest => new UsersController()
+                .Register(httpRequest));
 
             serverRoutingTable
-                .Add(HttpRequestMethod.Get, "/users/logout", request => new UsersController().Logout(request));
+                .Add(HttpRequestMethod.Get, "/users/logout", httpRequest => new UsersController()
+                .Logout(httpRequest));
 
             serverRoutingTable
-                .Add(HttpRequestMethod.Get, "/home", request => new UsersController().Home(request));
+                .Add(HttpRequestMethod.Get, "/home", httpRequest => new HomeController(httpRequest)
+                .Home(httpRequest));
 
             //[POST] Mappings
 
             serverRoutingTable
-                .Add(HttpRequestMethod.Post, "/users/login", request => new UsersController().LoginConfirm(request));
+                .Add(HttpRequestMethod.Post, "/users/login", request => new UsersController()
+                .LoginConfirm(request));
 
             serverRoutingTable
-                .Add(HttpRequestMethod.Post, "/users/register", request => new UsersController().RegisterConfirm(request));
+                .Add(HttpRequestMethod.Post, "/users/register", request => new UsersController()
+                .RegisterConfirm(request));
 
             Server server = new Server(8000, serverRoutingTable);
 
