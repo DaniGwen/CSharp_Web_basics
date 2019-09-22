@@ -38,9 +38,7 @@ namespace SIS.WebServer
             {
                 var cookie = httpRequest.Cookies.GetCookie(HttpSessionStorage.SessionCookieKey);
 
-                sessionId = cookie.Value;
-
-                httpRequest.Session = HttpSessionStorage.GetSession(sessionId);
+                sessionId = cookie.Value; 
             }
             else
             {
@@ -63,6 +61,8 @@ namespace SIS.WebServer
 
         public async Task ProcessRequestAsync()
         {
+            HttpResponse httpResponse = null;
+
             try
             {
                 IHttpRequest httpRequest = await this.ReadRequestAsync();
@@ -70,10 +70,10 @@ namespace SIS.WebServer
                 if (httpRequest != null)
                 {
                     Console.WriteLine($"Processing {httpRequest.RequestMethod} {httpRequest.Path}...");
-
+                      
                     var sessionId = this.SetRequestSession(httpRequest);
 
-                    var httpResponse = this.HandleRequest(httpRequest);
+                    httpResponse = this.HandleRequest(httpRequest);
 
                     this.SetResponceSession(httpResponse, sessionId);
 
@@ -82,13 +82,16 @@ namespace SIS.WebServer
             }
             catch (BadRequestException exception)
             {
-                this.PrepareResponse(new TextResult(exception.ToString(), HttpResponseStatusCode.BadRequest));
+                httpResponse = new TextResult(exception.Message, HttpResponseStatusCode.BadRequest);
+                //this.PrepareResponse(new TextResult(exception.ToString(), HttpResponseStatusCode.BadRequest));
             }
-            catch (Exception e)
+            catch (Exception exception)
             {
-                this.PrepareResponse(new TextResult(e.ToString(), HttpResponseStatusCode.InternalServerError));
+                httpResponse = new TextResult(exception.Message, HttpResponseStatusCode.InternalServerError);
+                //this.PrepareResponse(new TextResult(e.ToString(), HttpResponseStatusCode.InternalServerError));
             }
 
+            this.PrepareResponse(httpResponse);
             this.client.Shutdown(SocketShutdown.Both);
         }
 
