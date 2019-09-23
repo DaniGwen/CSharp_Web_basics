@@ -17,13 +17,13 @@ namespace SIS.HTTP.Responses
         {
             this.Headers = new HttpHeaderCollection();
             this.Content = new byte[0];
+            this.Cookies = new HttpCookieCollection();
         }
 
         public HttpResponse(HttpResponseStatusCode statusCode) : this()
         {
             CoreValidator.ThrowIfNull(statusCode, nameof(statusCode));
             this.StatusCode = statusCode;
-            this.Cookies = new HttpCookieCollection();
         }
 
         public IHttpCookieCollection Cookies { get; set; }

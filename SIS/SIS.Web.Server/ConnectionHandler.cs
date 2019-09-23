@@ -82,13 +82,13 @@ namespace SIS.WebServer
             }
             catch (BadRequestException exception)
             {
-                httpResponse = new TextResult(exception.Message, HttpResponseStatusCode.BadRequest);
-                //this.PrepareResponse(new TextResult(exception.ToString(), HttpResponseStatusCode.BadRequest));
+                //httpResponse = new TextResult(exception.Message, HttpResponseStatusCode.BadRequest);
+                this.PrepareResponse(new TextResult(exception.ToString(), HttpResponseStatusCode.BadRequest));
             }
             catch (Exception exception)
             {
-                httpResponse = new TextResult(exception.Message, HttpResponseStatusCode.InternalServerError);
-                //this.PrepareResponse(new TextResult(e.ToString(), HttpResponseStatusCode.InternalServerError));
+                //httpResponse = new TextResult(exception.Message, HttpResponseStatusCode.InternalServerError);
+                this.PrepareResponse(new TextResult(exception.ToString(), HttpResponseStatusCode.InternalServerError));
             }
 
             this.PrepareResponse(httpResponse);
