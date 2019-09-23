@@ -102,7 +102,7 @@ namespace SIS.WebServer
 
             while (true)
             {
-                int numberOfBytesRead = await this.client.ReceiveAsync(data, SocketFlags.None);
+                int numberOfBytesRead = await this.client.ReceiveAsync(data.Array, SocketFlags.None);
 
                 if (numberOfBytesRead == 0)
                 {
