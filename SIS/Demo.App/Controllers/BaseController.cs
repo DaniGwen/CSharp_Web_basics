@@ -22,7 +22,7 @@ namespace Demo.App.Controllers
             return this.httpRequest.Session.ContainsParameter("username");
         }
 
-        private string ParseTamplate(string viewContent)    
+        private string ParseTemplate(string viewContent)    
         {
             foreach (var param in viewData)
             {
@@ -39,7 +39,7 @@ namespace Demo.App.Controllers
             string viewContent = File
                 .ReadAllText(@"C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.App\Views\" + controllerName + "\\" + viewName + ".html");
 
-            viewContent = this.ParseTamplate(viewContent);
+            viewContent = this.ParseTemplate(viewContent);
 
             HtmlResult htmlResult = new HtmlResult(viewContent, HttpResponseStatusCode.Ok);
 

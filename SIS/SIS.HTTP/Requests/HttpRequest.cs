@@ -22,6 +22,7 @@ namespace SIS.HTTP.Requests
             this.Headers = new HttpHeaderCollection();
             this.QueryData = new Dictionary<string, object>();
             this.FormData = new Dictionary<string, object>();
+            this.Session = new HttpSession();
 
             this.ParseRequest(requestString);
         }

@@ -25,19 +25,19 @@ namespace Demo.App
             HttpCookie cookie = new HttpCookie("lang", "en");
             cookie.Delete();
 
-            newResponse.AddCookie(cookie);
-
-            return newResponse;
+            return this.View();
         }
 
         public IHttpResponse Home(IHttpRequest httpRequest)
         {
             if (!this.IsLoggedIn())
             {
-                return this.Redirect("/users/login");
+                return this.Redirect("/index");
             }
 
-            return this.View();
+            this.viewData["username"] = this.httpRequest.Session.GetParameter("username");
+
+            return this.Redirect("/home");
         }
     }
 }

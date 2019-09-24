@@ -31,10 +31,10 @@ namespace Demo.App.Controllers
                     this.Redirect("/login");
                 }
 
-                httpRequest.Session.AddParameter("username", user.Username);
+                httpRequest.Session.AddParameter("username", username);
             }
 
-            return this.Redirect("/home");
+            return this.Redirect("/");
         }
 
         public IHttpResponse Register(IHttpRequest httpRequest)
@@ -70,9 +70,10 @@ namespace Demo.App.Controllers
 
         public IHttpResponse Logout(IHttpRequest httpRequest)
         {
-            httpRequest.Session.ClearParameter();
+                httpRequest.Session.ClearParameter();
 
-            return this.Redirect("/");
+                return this.Redirect("/");
+          
         }
     }
 

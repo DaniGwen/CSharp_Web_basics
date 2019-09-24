@@ -11,7 +11,11 @@ namespace SIS.HTTP.Sessions
 
         private readonly Dictionary<string, object> SessionParameters;
 
-        public HttpSession(string id)
+        public HttpSession()
+        {
+
+        }
+        public HttpSession(string id) : this()
         {
             this.Id = id;
 

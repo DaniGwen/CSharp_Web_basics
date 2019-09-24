@@ -91,7 +91,6 @@ namespace SIS.WebServer
                 this.PrepareResponse(new TextResult(exception.ToString(), HttpResponseStatusCode.InternalServerError));
             }
 
-            this.PrepareResponse(httpResponse);
             this.client.Shutdown(SocketShutdown.Both);
         }
 
