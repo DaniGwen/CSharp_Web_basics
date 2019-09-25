@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\thinkpad\\Desktop\\04. CSharp-Web-Basics-Workshop-Web-Application-Advanced-CSS-Bootstrap-Skeleton\\IRunes.Models\\IRunes.Models.csproj": {}
+    "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Models\\IRunes.Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\thinkpad\\Desktop\\04. CSharp-Web-Basics-Workshop-Web-Application-Advanced-CSS-Bootstrap-Skeleton\\IRunes.Models\\IRunes.Models.csproj": {
+    "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Models\\IRunes.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\thinkpad\\Desktop\\04. CSharp-Web-Basics-Workshop-Web-Application-Advanced-CSS-Bootstrap-Skeleton\\IRunes.Models\\IRunes.Models.csproj",
+        "projectUniqueName": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Models\\IRunes.Models.csproj",
         "projectName": "IRunes.Models",
-        "projectPath": "C:\\Users\\thinkpad\\Desktop\\04. CSharp-Web-Basics-Workshop-Web-Application-Advanced-CSS-Bootstrap-Skeleton\\IRunes.Models\\IRunes.Models.csproj",
+        "projectPath": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Models\\IRunes.Models.csproj",
         "packagesPath": "C:\\Users\\thinkpad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\thinkpad\\Desktop\\04. CSharp-Web-Basics-Workshop-Web-Application-Advanced-CSS-Bootstrap-Skeleton\\IRunes.Models\\obj\\",
+        "outputPath": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -21,14 +21,14 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp2.2"
+          "netcoreapp2.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp2.2": {
+          "netcoreapp2.1": {
             "projectReferences": {}
           }
         },
@@ -39,7 +39,15 @@
         }
       },
       "frameworks": {
-        "netcoreapp2.2": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
           "imports": [
             "net461"
           ],
