@@ -1,0 +1,136 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v2.2": {
+      "IRunes.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "IRunes.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/IRunes.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/IRunes.Data.dll": {}
+        }
+      },
+      "IRunes.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/IRunes.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/IRunes.Models.dll": {}
+        }
+      },
+      "SIS.HTTP/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/SIS.HTTP.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SIS.HTTP.dll": {}
+        }
+      },
+      "SIS.WebServer/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "SIS.HTTP": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SIS.WebServer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SIS.WebServer.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "IRunes.Data/1.0.0": {
+      "type": "project",
+      "path": "../IRunes.Data/IRunes.Data.csproj",
+      "msbuildProject": "../IRunes.Data/IRunes.Data.csproj"
+    },
+    "IRunes.Models/1.0.0": {
+      "type": "project",
+      "path": "../IRunes.Models/IRunes.Models.csproj",
+      "msbuildProject": "../IRunes.Models/IRunes.Models.csproj"
+    },
+    "SIS.HTTP/1.0.0": {
+      "type": "project",
+      "path": "../SIS.HTTP/SIS.HTTP.csproj",
+      "msbuildProject": "../SIS.HTTP/SIS.HTTP.csproj"
+    },
+    "SIS.WebServer/1.0.0": {
+      "type": "project",
+      "path": "../SIS.WebServer/SIS.WebServer.csproj",
+      "msbuildProject": "../SIS.WebServer/SIS.WebServer.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v2.2": [
+      "IRunes.Data >= 1.0.0",
+      "SIS.WebServer >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\thinkpad\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\thinkpad\\Desktop\\04. CSharp-Web-Basics-Workshop-Web-Application-Advanced-CSS-Bootstrap-Skeleton\\IRunes.App\\IRunes.App.csproj",
+      "projectName": "IRunes.App",
+      "projectPath": "C:\\Users\\thinkpad\\Desktop\\04. CSharp-Web-Basics-Workshop-Web-Application-Advanced-CSS-Bootstrap-Skeleton\\IRunes.App\\IRunes.App.csproj",
+      "packagesPath": "C:\\Users\\thinkpad\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\thinkpad\\Desktop\\04. CSharp-Web-Basics-Workshop-Web-Application-Advanced-CSS-Bootstrap-Skeleton\\IRunes.App\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\thinkpad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp2.2"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "projectReferences": {
+            "C:\\Users\\thinkpad\\Desktop\\04. CSharp-Web-Basics-Workshop-Web-Application-Advanced-CSS-Bootstrap-Skeleton\\IRunes.Data\\IRunes.Data.csproj": {
+              "projectPath": "C:\\Users\\thinkpad\\Desktop\\04. CSharp-Web-Basics-Workshop-Web-Application-Advanced-CSS-Bootstrap-Skeleton\\IRunes.Data\\IRunes.Data.csproj"
+            },
+            "C:\\Users\\thinkpad\\Desktop\\04. CSharp-Web-Basics-Workshop-Web-Application-Advanced-CSS-Bootstrap-Skeleton\\SIS.WebServer\\SIS.WebServer.csproj": {
+              "projectPath": "C:\\Users\\thinkpad\\Desktop\\04. CSharp-Web-Basics-Workshop-Web-Application-Advanced-CSS-Bootstrap-Skeleton\\SIS.WebServer\\SIS.WebServer.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp2.2": {
+        "imports": [
+          "net461"
+        ],
+        "assetTargetFallback": true,
+        "warn": true
+      }
+    }
+  }
+}
