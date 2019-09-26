@@ -4,6 +4,7 @@ using System.Net.Sockets;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using IRunes.App.Resources;
 using SIS.HTTP.Common;
 using SIS.HTTP.Cookies;
 using SIS.HTTP.Enums;
@@ -14,6 +15,7 @@ using SIS.HTTP.Responses.Contracts;
 using SIS.WebServer.Result;
 using SIS.WebServer.Routing.Contracts;
 using SIS.WebServer.Sessions;
+
 
 namespace SIS.WebServer
 {
@@ -64,6 +66,27 @@ namespace SIS.WebServer
             return new HttpRequest(result.ToString());
         }
 
+        private IHttpResponse ReturnIfResource(IHttpRequest httpRequest)
+        {
+            string folderPrefix = "/../../../../";
+            string assemblyPath = Assembly.GetExecutingAssembly().Location;
+            string resourceFolder = "Resources";
+            string requestedResource = httpRequest.Path;
+
+            string fullPath = assemblyPath + folderPrefix + resourceFolder + requestedResource;
+
+            if (File.Exists(fullPath))
+            {
+                byte[] content = File.ReadAllBytes(fullPath);
+
+                return new InLineResourceResult(content, HttpResponseStatusCode.Found);
+            }
+            else
+            {
+                return new TextResult($"Route with method {httpRequest.RequestMethod} and path \"{httpRequest.Path}\" not found", HttpResponseStatusCode.NotFound);
+            }
+        }
+
         private IHttpResponse HandleRequest(IHttpRequest httpRequest)
         {
             // EXECUTE FUNCTION FOR CURRENT REQUEST -> RETURNS RESPONSE
@@ -75,20 +98,6 @@ namespace SIS.WebServer
             return this.serverRoutingTable
                 .Get(httpRequest.RequestMethod, httpRequest.Path)
                 .Invoke(httpRequest);
-        }
-
-        private IHttpResponse ReturnIfResource(IHttpRequest httpRequest)
-        {
-            string folderPrefix = "/../../../../";
-            string assemblyPath = Assembly.GetExecutingAssembly().Location;
-            string resourceFolder = "Resources/";
-            string requestedResource = httpRequest.Path;
-
-            string fullPath = assemblyPath + folderPrefix + resourceFolder + requestedResource;
-
-            Console.WriteLine(File.ReadAllText(fullPath));
-
-            return new TextResult($"Route with method {httpRequest.RequestMethod} and path \"{httpRequest.Path}\" not found", HttpResponseStatusCode.NotFound);
         }
 
         private string SetRequestSession(IHttpRequest httpRequest)

@@ -1,10 +1,11 @@
 ﻿namespace IRunes.App
 {
-    using SIS.WebServer;
-    using SIS.WebServer.Result;
-    using SIS.WebServer.Routing;
     using SIS.HTTP.Enums;
     using Data;
+    using SIS.WebServer.Routing;
+    using SIS.WebServer;
+    using SIS.WebServer.Result;
+    using IRunes.App.Controllers;
 
     public class Launcher
     {
@@ -25,6 +26,10 @@
         private static void Configure(ServerRoutingTable serverRoutingTable)
         {
             serverRoutingTable.Add(HttpRequestMethod.Get, "/", request => new RedirectResult("/Home/Index"));
+
+            serverRoutingTable.Add(HttpRequestMethod.Get, "/Home/Index", request => new HomeController().Index(request));
         }
+
+       
     }
 }

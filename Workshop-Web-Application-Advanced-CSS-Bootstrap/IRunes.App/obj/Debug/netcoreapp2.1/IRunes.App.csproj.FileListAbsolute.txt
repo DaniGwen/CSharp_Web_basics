@@ -18,3 +18,16 @@ C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanc
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\obj\Debug\netcoreapp2.1\IRunes.App.csproj.CopyComplete
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\obj\Debug\netcoreapp2.1\IRunes.App.dll
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\obj\Debug\netcoreapp2.1\IRunes.App.pdb
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Resources\css\bootstrap.min.css
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Resources\js\bootstrap.min.js
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Resources\js\jquery-3.4.1.min.js
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Resources\js\popper.min.js
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Views\Albums\All.html
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Views\Albums\Create.html
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Views\Albums\Details.html
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Views\Home\Index-Logged.html
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Views\Home\Index.html
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Views\Tracks\Create.html
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Views\Tracks\Details.html
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Views\Users\Login.html
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Views\Users\Register.html

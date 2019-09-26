@@ -3643,6 +3643,7 @@
     ".NETCoreApp,Version=v2.1": [
       "IRunes.Data >= 1.0.0",
       "Microsoft.NETCore.App >= 2.1.0",
+      "SIS.HTTP >= 1.0.0",
       "SIS.WebServer >= 1.0.0"
     ]
   },
@@ -3678,6 +3679,9 @@
           "projectReferences": {
             "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Data\\IRunes.Data.csproj": {
               "projectPath": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Data\\IRunes.Data.csproj"
+            },
+            "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\SIS.HTTP\\SIS.HTTP.csproj": {
+              "projectPath": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\SIS.HTTP\\SIS.HTTP.csproj"
             },
             "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\SIS.WebServer\\SIS.WebServer.csproj": {
               "projectPath": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\SIS.WebServer\\SIS.WebServer.csproj"
