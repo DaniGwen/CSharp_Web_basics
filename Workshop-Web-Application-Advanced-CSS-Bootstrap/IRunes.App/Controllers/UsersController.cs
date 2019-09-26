@@ -1,4 +1,5 @@
-﻿using SIS.HTTP.Requests.Contracts;
+﻿using IRunes.Data;
+using SIS.HTTP.Requests.Contracts;
 using SIS.HTTP.Responses.Contracts;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,10 @@ namespace IRunes.App.Controllers
 
         public IHttpResponse LoginConfirm(IHttpRequest request)
         {
-            return null;
+            using (var context = new RunesDbContext())
+            {
+
+            }
         }
 
         public IHttpResponse Register(IHttpRequest request)
