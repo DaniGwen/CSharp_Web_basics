@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Sockets;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using SIS.HTTP.Common;
@@ -67,10 +68,26 @@ namespace SIS.WebServer
             // EXECUTE FUNCTION FOR CURRENT REQUEST -> RETURNS RESPONSE
             if (!this.serverRoutingTable.Contains(httpRequest.RequestMethod, httpRequest.Path))
             {
-                return new TextResult($"Route with method {httpRequest.RequestMethod} and path \"{httpRequest.Path}\" not found.", HttpResponseStatusCode.NotFound);
+                return this.ReturnIfResource(httpRequest);
             }
 
-            return this.serverRoutingTable.Get(httpRequest.RequestMethod, httpRequest.Path).Invoke(httpRequest);
+            return this.serverRoutingTable
+                .Get(httpRequest.RequestMethod, httpRequest.Path)
+                .Invoke(httpRequest);
+        }
+
+        private IHttpResponse ReturnIfResource(IHttpRequest httpRequest)
+        {
+            string folderPrefix = "../../../../";
+            string assemblyPath = Assembly.GetExecutingAssembly().Location;
+            string resourceFolder = "Resources/";
+            string requestedResource = httpRequest.Path;
+
+            string fullPath = folderPrefix + assemblyPath + resourceFolder + requestedResource;
+
+            Console.WriteLine(fullPath);
+
+            return new TextResult($"Route with method {httpRequest.RequestMethod} and path \"{httpRequest.Path}\" not found", HttpResponseStatusCode.NotFound);
         }
 
         private string SetRequestSession(IHttpRequest httpRequest)
