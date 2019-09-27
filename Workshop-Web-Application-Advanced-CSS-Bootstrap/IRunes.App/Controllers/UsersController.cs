@@ -2,7 +2,6 @@
 using IRunes.Models;
 using SIS.HTTP.Requests.Contracts;
 using SIS.HTTP.Responses.Contracts;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -45,13 +44,6 @@ namespace IRunes.App.Controllers
             }
 
             return this.Redirect("/");
-        }
-
-        private void SignIn(IHttpRequest httpRequest ,User userFromDb)
-        {
-            httpRequest.Session.AddParameter("username", userFromDb.Username);
-            httpRequest.Session.AddParameter("email", userFromDb.Email);
-            httpRequest.Session.AddParameter("id", userFromDb.Id);    
         }
 
         public IHttpResponse Register(IHttpRequest request)

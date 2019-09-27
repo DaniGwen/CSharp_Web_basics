@@ -25,9 +25,9 @@ C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanc
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Views\Albums\All.html
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Views\Albums\Create.html
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Views\Albums\Details.html
-C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Views\Home\Index-Logged.html
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Views\Home\Index.html
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Views\Tracks\Create.html
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Views\Tracks\Details.html
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Views\Users\Login.html
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Views\Users\Register.html
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Views\Home\Home.html

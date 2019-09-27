@@ -27,9 +27,11 @@ namespace IRunes.App.Controllers
             return httpRequest.Session.ContainsParameter("username");
         }
 
-        protected void SignIn(User user)
+        protected void SignIn(IHttpRequest httpRequest, User userFromDb)
         {
-
+            httpRequest.Session.AddParameter("username", userFromDb.Username);
+            httpRequest.Session.AddParameter("email", userFromDb.Email);
+            httpRequest.Session.AddParameter("id", userFromDb.Id);
         }
 
         protected void SignOut(IHttpRequest httpRequest)
