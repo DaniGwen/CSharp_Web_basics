@@ -1,4 +1,5 @@
-﻿using SIS.HTTP.Enums;
+﻿using IRunes.Models;
+using SIS.HTTP.Enums;
 using SIS.HTTP.Requests.Contracts;
 using SIS.HTTP.Responses.Contracts;
 using SIS.WebServer.Result;
@@ -24,6 +25,16 @@ namespace IRunes.App.Controllers
         protected bool IsLoggedIn(IHttpRequest httpRequest)
         {
             return httpRequest.Session.ContainsParameter("username");
+        }
+
+        protected void SignIn(User user)
+        {
+
+        }
+
+        protected void SignOut(IHttpRequest httpRequest)
+        {
+            httpRequest.Session.ClearParameters();
         }
 
         private string ParseTemplate(string viewContent)

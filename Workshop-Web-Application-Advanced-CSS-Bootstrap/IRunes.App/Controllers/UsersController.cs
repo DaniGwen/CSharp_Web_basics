@@ -41,13 +41,17 @@ namespace IRunes.App.Controllers
                     return this.Redirect("/Users/Login");
                 }
 
-                this.SignIn(userFromDb);
+                this.SignIn(request,userFromDb);
             }
+
+            return this.Redirect("/");
         }
 
-        private void SignIn(User userFromDb)
+        private void SignIn(IHttpRequest httpRequest ,User userFromDb)
         {
-            throw new NotImplementedException();
+            httpRequest.Session.AddParameter("username", userFromDb.Username);
+            httpRequest.Session.AddParameter("email", userFromDb.Email);
+            httpRequest.Session.AddParameter("id", userFromDb.Id);    
         }
 
         public IHttpResponse Register(IHttpRequest request)
@@ -85,7 +89,7 @@ namespace IRunes.App.Controllers
 
         public IHttpResponse Logout(IHttpRequest request)
         {
-            this.SignOut();
+            this.SignOut(request);
 
             return this.Redirect("/");
         }
