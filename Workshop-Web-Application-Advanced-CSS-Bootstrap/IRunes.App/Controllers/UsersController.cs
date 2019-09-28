@@ -42,8 +42,9 @@ namespace IRunes.App.Controllers
 
                 this.SignIn(request,userFromDb);
             }
+            this.ViewData["Username"] = request.Session.GetParameter("username");
 
-            return this.Redirect("/");
+            return this.View("Home");
         }
 
         public IHttpResponse Register(IHttpRequest request)

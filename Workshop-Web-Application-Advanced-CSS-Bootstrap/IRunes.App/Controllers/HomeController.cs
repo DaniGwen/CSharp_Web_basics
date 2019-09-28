@@ -8,10 +8,11 @@ namespace IRunes.App.Controllers
 {
     public class HomeController : BaseController
     {
-        public IHttpResponse Index(IHttpRequest request)
+        public IHttpResponse Index(IHttpRequest httpRequest)
         {
-            if (this.IsLoggedIn(request))
+            if (this.IsLoggedIn(httpRequest))
             {
+
                 return this.View("Home");
             }
 

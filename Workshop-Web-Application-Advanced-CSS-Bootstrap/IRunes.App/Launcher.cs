@@ -11,12 +11,9 @@
     {
         public static void Main(string[] args)
         {
-            using (var context = new RunesDbContext())
-            {
-                context.Database.EnsureCreated();
-            }
 
             ServerRoutingTable serverRoutingTable = new ServerRoutingTable();
+
             Configure(serverRoutingTable);
 
             Server server = new Server(8000, serverRoutingTable);
@@ -44,8 +41,8 @@
             serverRoutingTable.Add(HttpRequestMethod.Get, "/Users/Register", request => new UsersController()
             .Register(request));
             serverRoutingTable.Add(HttpRequestMethod.Post, "/Users/Register", request => new UsersController()
-            .RegisterConfirm (request));
-             
+            .RegisterConfirm(request));
+
             #endregion
 
 
