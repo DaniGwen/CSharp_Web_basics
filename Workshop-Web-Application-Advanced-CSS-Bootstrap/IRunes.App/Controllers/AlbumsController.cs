@@ -1,4 +1,6 @@
-﻿using IRunes.Data;
+﻿using IRunes.App.Extensions;
+using IRunes.Data;
+using IRunes.Models;
 using SIS.HTTP.Requests.Contracts;
 using SIS.HTTP.Responses;
 using SIS.HTTP.Responses.Contracts;
@@ -13,9 +15,20 @@ namespace IRunes.App.Controllers
     {
         public IHttpResponse All(IHttpRequest httpRequest)
         {
-            using(var context = new RunesDbContext())
+            using (var context = new RunesDbContext())
             {
-                this.ViewData["Albums"] = context.Albums.Select(album => album).ToList();
+                ICollection<Album> allAlbums = context.Albums.ToList();
+
+                if (allAlbums.Count == 0)
+                {
+                    this.ViewData["Albums"] = "There are currently no albums.";
+                }
+                else
+                {
+                    this.ViewData["Albums"] = string
+                        .Join("<br />", allAlbums.Select(album => album.ToHtmlAll()).ToList());
+                }
+
 
                 return this.View();
             }
@@ -23,12 +36,12 @@ namespace IRunes.App.Controllers
 
         public IHttpResponse Create(IHttpRequest httpRequest)
         {
-            return null;
-        } 
+            return this.View();
+        }
 
         public IHttpResponse Details(IHttpRequest httpRequest)
         {
-            return null;
+            return this.View();
         }
     }
 }
