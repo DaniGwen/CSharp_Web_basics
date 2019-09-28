@@ -15,6 +15,11 @@ namespace IRunes.App.Controllers
     {
         public IHttpResponse All(IHttpRequest httpRequest)
         {
+            if (!this.IsLoggedIn(httpRequest))
+            {
+                return this.View("/users/Login");
+            }
+
             using (var context = new RunesDbContext())
             {
                 ICollection<Album> allAlbums = context.Albums.ToList();
@@ -36,11 +41,47 @@ namespace IRunes.App.Controllers
 
         public IHttpResponse Create(IHttpRequest httpRequest)
         {
+            if (!this.IsLoggedIn(httpRequest))
+            {
+                return this.View("/users/Login");
+            }
+
+            return this.View();
+        }
+
+        public IHttpResponse CreateConfirm(IHttpRequest httpRequest)
+        {
+            if (!this.IsLoggedIn(httpRequest))
+            {
+                return this.View("/users/Login");
+            }
+
+            using (var context = new RunesDbContext())
+            {
+                string name = ((ISet<string>)httpRequest.FormData["name"]).FirstOrDefault();
+                string cover = ((ISet<string>)httpRequest.FormData["cover"]).FirstOrDefault();
+
+                var album = new Album
+                {
+                    Cover = cover,
+                    Name = name,
+                    Price = 0M
+                };
+
+                context.Albums.Add(album);
+                context.SaveChanges();
+            }
+
             return this.View();
         }
 
         public IHttpResponse Details(IHttpRequest httpRequest)
         {
+            if (!this.IsLoggedIn(httpRequest))
+            {
+                return this.View("/users/Login");
+            }
+
             return this.View();
         }
     }

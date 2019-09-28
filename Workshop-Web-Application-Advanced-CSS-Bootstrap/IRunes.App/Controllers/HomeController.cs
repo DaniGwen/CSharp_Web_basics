@@ -12,7 +12,6 @@ namespace IRunes.App.Controllers
         {
             if (this.IsLoggedIn(httpRequest))
             {
-
                 return this.View("Home");
             }
 
