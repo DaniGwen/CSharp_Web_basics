@@ -32,16 +32,17 @@ namespace IRunes.App.Controllers
                 string password = ((ISet<string>)request.FormData["password"]).FirstOrDefault();
 
                 User userFromDb = context.Users.FirstOrDefault(user => (user.Username == username
-                                                                                || user.Email == username)
-                                                                                && user.Password == this.HashPassword(password));
+                                                                       || user.Email == username)
+                                                                       && user.Password == this.HashPassword(password));
 
                 if (userFromDb == null)
                 {
                     return this.Redirect("/Users/Login");
                 }
 
-                this.SignIn(request,userFromDb);
+                this.SignIn(request, userFromDb);
             }
+
             this.ViewData["Username"] = request.Session.GetParameter("username");
 
             return this.View("Home");
@@ -74,7 +75,7 @@ namespace IRunes.App.Controllers
                 };
 
                 context.Users.Add(user);
-                context.SaveChanges(); 
+                context.SaveChanges();
             }
 
             return this.Redirect("/Users/Login");
