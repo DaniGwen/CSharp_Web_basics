@@ -17,7 +17,7 @@ namespace IRunes.App.Controllers
         {
             if (!this.IsLoggedIn(httpRequest))
             {
-                return this.View("/users/Login");
+                return this.Redirect("/Users/Login");
             }
 
             using (var context = new RunesDbContext())
@@ -43,7 +43,7 @@ namespace IRunes.App.Controllers
         {
             if (!this.IsLoggedIn(httpRequest))
             {
-                return this.View("/users/Login");
+                return this.Redirect("/Users/Login");
             }
 
             return this.View();
@@ -53,7 +53,7 @@ namespace IRunes.App.Controllers
         {
             if (!this.IsLoggedIn(httpRequest))
             {
-                return this.View("/users/Login");
+                return this.Redirect("/Users/Login");
             }
 
             using (var context = new RunesDbContext())
@@ -72,14 +72,14 @@ namespace IRunes.App.Controllers
                 context.SaveChanges();
             }
 
-            return this.View();
+            return this.View("/Albums/All");
         }
 
         public IHttpResponse Details(IHttpRequest httpRequest)
         {
             if (!this.IsLoggedIn(httpRequest))
             {
-                return this.View("/users/Login");
+                return this.Redirect("/Users/Login");
             }
 
             return this.View();

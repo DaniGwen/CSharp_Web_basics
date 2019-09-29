@@ -47,8 +47,10 @@
 
             #region Album routes
 
-            serverRoutingTable.Add(HttpRequestMethod.Get, "/Albums/All", request => new AlbumsController().All(request));
-            serverRoutingTable.Add(HttpRequestMethod.Get, "/Albums/Create", request => new AlbumsController().Create(request));
+            serverRoutingTable.Add(HttpRequestMethod.Get, "/Albums/All", request => new AlbumsController()
+            .All(request));
+            serverRoutingTable.Add(HttpRequestMethod.Get, "/Albums/Create", request => new AlbumsController()
+            .Create(request));
             serverRoutingTable.Add(HttpRequestMethod.Get, "/Albums/Details", request => new AlbumsController()
             .Details(request));
             serverRoutingTable.Add(HttpRequestMethod.Post, "/Albums/Create", request => new AlbumsController().CreateConfirm(request));

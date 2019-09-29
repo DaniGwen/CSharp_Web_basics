@@ -6,7 +6,7 @@ namespace IRunes.App.Extensions
     {
         public static string ToHtmlAll(this Album album)
         {
-            return $"<a href=\"/Albums/Details?id={album.Id}\">{album.Name} </a>";
+            return $"<div><a href=\"/Albums/Details?id={album.Id}\">{album.Name} </a></div>";
         }
 
         public static string ToHtmlAll(this Track track)

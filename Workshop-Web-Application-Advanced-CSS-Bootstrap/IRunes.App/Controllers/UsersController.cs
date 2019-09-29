@@ -24,26 +24,26 @@ namespace IRunes.App.Controllers
             return this.View();
         }
 
-        public IHttpResponse LoginConfirm(IHttpRequest request)
+        public IHttpResponse LoginConfirm(IHttpRequest httpRequest)
         {
             using (var context = new RunesDbContext())
             {
-                string username = ((ISet<string>)request.FormData["username"]).FirstOrDefault();
-                string password = ((ISet<string>)request.FormData["password"]).FirstOrDefault();
+                string username = ((ISet<string>)httpRequest.FormData["username"]).FirstOrDefault();
+                string password = ((ISet<string>)httpRequest.FormData["password"]).FirstOrDefault();
 
                 User userFromDb = context.Users.FirstOrDefault(user => (user.Username == username
-                                                                       || user.Email == username)
-                                                                       && user.Password == this.HashPassword(password));
+                                                                     || user.Email == username)
+                                                                    && user.Password == this.HashPassword(password));
 
                 if (userFromDb == null)
                 {
                     return this.Redirect("/Users/Login");
                 }
 
-                this.SignIn(request, userFromDb);
+                this.SignIn(httpRequest, userFromDb);
             }
 
-            this.ViewData["Username"] = request.Session.GetParameter("username");
+            this.ViewData["Username"] = httpRequest.Session.GetParameter("username");
 
             return this.View("Home");
         }
