@@ -1,4 +1,5 @@
 ﻿using IRunes.Models;
+using System.Linq;
 
 namespace IRunes.App.Extensions
 {
@@ -22,15 +23,19 @@ namespace IRunes.App.Extensions
                 "       <h1>Tracks</h1>" +
                 "       <hr style=\"height: 2px\" />" +
                 "       <a href=\"/Tracks/Create\">Create Track</a>" +
-                "       <hr style=\"height: 2px\" />" + 
+                "       <hr style=\"height: 2px\" />" +
                 "       <ul class=\"tracks-list\">" +
-                $"        "
+                $"        {album.Tracks.Select((track, index) => track.ToHtmlAll(index + 1))}" +
+                "       </ul>" +
+                "       <hr style=\"height: 2px\" />" +
+                "    </div>" +
+                "  </div>";
 
         }
 
-        public static string ToHtmlAll(this Track track)
+        public static string ToHtmlAll(this Track track,int index)
         {
-            return null;
+            return $"<li><a href=\"/Tracks/Details?id={track.Id}\">{index}. {track.Name}</li>";
         }
 
         public static string ToHtmlDetails(this Track track)
