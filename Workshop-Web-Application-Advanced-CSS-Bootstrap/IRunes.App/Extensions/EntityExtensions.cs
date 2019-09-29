@@ -9,12 +9,26 @@ namespace IRunes.App.Extensions
             return $"<div><a href=\"/Albums/Details?id={album.Id}\">{album.Name} </a></div>";
         }
 
-        public static string ToHtmlAll(this Track track)
+        public static string ToHtmlDetails(this Album album)
         {
-            return null;
+            return $"<div class=\"album-details\">" +
+                "     <div class=\"album-data\">" +
+                $"      <img src=\"{album.Cover}\">" +
+                $"      <h1>Album Name: {album.Name}</h1>" +
+                $"      <h1>Album Price: ${album.Price:F2}</h1>" +
+                $"      <br />" +
+                "   </div>" +
+                "   <div class=\"album-tracks\">" +
+                "       <h1>Tracks</h1>" +
+                "       <hr style=\"height: 2px\" />" +
+                "       <a href=\"/Tracks/Create\">Create Track</a>" +
+                "       <hr style=\"height: 2px\" />" + 
+                "       <ul class=\"tracks-list\">" +
+                $"        "
+
         }
 
-        public static string ToHtmlDetails(this Album album)
+        public static string ToHtmlAll(this Track track)
         {
             return null;
         }
