@@ -31,7 +31,10 @@
         <hr style="height: 2px" />
         <main>
             @Model.Album
-            <a href="/Albums/All">Back To All</a>
+            <hr style="height: 2px" />
+            <div>
+                <a href="/Albums/Details?id={{{albumId}}}">Back To Album</a>
+            </div>
         </main>
         <hr style="height: 2px" />
         <footer>

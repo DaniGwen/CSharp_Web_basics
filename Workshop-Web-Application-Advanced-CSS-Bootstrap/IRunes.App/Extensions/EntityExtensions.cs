@@ -5,6 +5,13 @@ namespace IRunes.App.Extensions
 {
     public static class EntityExtensions
     {
+        private static string GetTracks(Album album)
+        {
+            return album.Tracks.Count == 0
+                                      ? "There are no tracks"
+                                      : string.Join("", album.Tracks.Select((track, index) => track.ToHtmlAll(index + 1)));
+        }
+
         public static string ToHtmlAll(this Album album)
         {
             return $"<div><a href=\"/Albums/Details?id={album.Id}\">{album.Name} </a></div>";
@@ -25,7 +32,7 @@ namespace IRunes.App.Extensions
                 "       <a href=\"/Tracks/Create\">Create Track</a>" +
                 "       <hr style=\"height: 2px\" />" +
                 "       <ul class=\"tracks-list\">" +
-                $"        {album.Tracks.Select((track, index) => track.ToHtmlAll(index + 1))}" +
+                $"        {GetTracks(album)}" +
                 "       </ul>" +
                 "       <hr style=\"height: 2px\" />" +
                 "    </div>" +
@@ -33,7 +40,7 @@ namespace IRunes.App.Extensions
 
         }
 
-        public static string ToHtmlAll(this Track track,int index)
+        public static string ToHtmlAll(this Track track, int index)
         {
             return $"<li><a href=\"/Tracks/Details?id={track.Id}\">{index}. {track.Name}</li>";
         }
