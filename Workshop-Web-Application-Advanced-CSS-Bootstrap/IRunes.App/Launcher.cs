@@ -45,7 +45,7 @@
 
             #endregion
 
-            #region Album routes
+            #region Albums routes
 
             serverRoutingTable.Add(HttpRequestMethod.Get, "/Albums/All", request => new AlbumsController()
             .All(request));
@@ -59,7 +59,12 @@
 
             #region Tracks Routes
 
-
+            serverRoutingTable.Add(HttpRequestMethod.Get, "/Tracks/Create", request => new TracksController()
+            .Create(request));
+            serverRoutingTable.Add(HttpRequestMethod.Post, "/Tracks/Create", request => new TracksController()
+            .CreateConfirm(request));
+            serverRoutingTable.Add(HttpRequestMethod.Post, "/Tracks/Details", request => new TracksController()
+            .Details(request));
 
             #endregion
         }
