@@ -63,7 +63,7 @@
             .Create(request));
             serverRoutingTable.Add(HttpRequestMethod.Post, "/Tracks/Create", request => new TracksController()
             .CreateConfirm(request));
-            serverRoutingTable.Add(HttpRequestMethod.Post, "/Tracks/Details", request => new TracksController()
+            serverRoutingTable.Add(HttpRequestMethod.Get, "/Tracks/Details", request => new TracksController()
             .Details(request));
 
             #endregion

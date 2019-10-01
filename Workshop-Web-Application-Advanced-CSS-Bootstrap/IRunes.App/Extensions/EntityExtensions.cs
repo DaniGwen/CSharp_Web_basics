@@ -10,7 +10,7 @@ namespace IRunes.App.Extensions
         {
             return album.Tracks.Count == 0
                                       ? "There are no tracks"
-                                      : string.Join("", album.Tracks.Select((track, index) => track.ToHtmlAll(index + 1)));
+                                      : string.Join("", album.Tracks.Select((track, index) => track.ToHtmlAll(album.Id,index + 1)));
         }
 
         public static string ToHtmlAll(this Album album)
@@ -41,14 +41,17 @@ namespace IRunes.App.Extensions
 
         }
 
-        public static string ToHtmlAll(this Track track, int index)
+        public static string ToHtmlAll(this Track track,string albumId, int index)
         {
-            return $"<li><a href=\"/Tracks/Details?id={track.Id}\">{index}. {track.Name}</li>";
+            return $"<li><strong>{index}</strong>.<a href=\"/Tracks/Details?albumId={albumId}&trackId={track.Id}\"> {WebUtility.UrlDecode(track.Name)}</a></li>";
         }
 
         public static string ToHtmlDetails(this Track track)
         {
-            return null;
+            return $"<div class=\"track-details\">" +
+                   $"     <iframe src=\"{WebUtility.UrlEncode(track.Link)}\"></iframe>"
+                   "       "
+                $"</div>";
         }
     }
 }

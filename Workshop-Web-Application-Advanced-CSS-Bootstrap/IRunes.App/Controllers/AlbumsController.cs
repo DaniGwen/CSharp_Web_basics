@@ -1,6 +1,7 @@
 ﻿using IRunes.App.Extensions;
 using IRunes.Data;
 using IRunes.Models;
+using Microsoft.EntityFrameworkCore;
 using SIS.HTTP.Requests.Contracts;
 using SIS.HTTP.Responses;
 using SIS.HTTP.Responses.Contracts;
@@ -87,7 +88,9 @@ namespace IRunes.App.Controllers
 
             using (var context = new RunesDbContext())
             {
-                Album albumFromDb = context.Albums.SingleOrDefault(album => album.Id == albumId);
+                Album albumFromDb = context.Albums
+                    .Include(album => album.Tracks)
+                    .SingleOrDefault(album => album.Id == albumId);
 
                 if (albumFromDb == null)
                 {

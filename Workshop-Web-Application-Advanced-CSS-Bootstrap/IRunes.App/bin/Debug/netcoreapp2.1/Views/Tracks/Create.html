@@ -31,7 +31,7 @@
     <main>
         <h1>Create Track</h1>
         <hr style="height: 2px" />
-        <form action="/Tracks/Create?@Model.AlbumId" method="POST">
+        <form action="/Tracks/Create?albumId=@Model.AlbumId" method="POST">
             <div>
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" placeholder="Name..." />
