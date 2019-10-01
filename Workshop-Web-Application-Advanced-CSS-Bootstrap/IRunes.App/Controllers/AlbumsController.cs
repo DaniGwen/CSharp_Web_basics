@@ -73,7 +73,7 @@ namespace IRunes.App.Controllers
                 context.SaveChanges();
             }
 
-            return this.View("/Albums/All");
+            return this.View("/All");
         }
 
         public IHttpResponse Details(IHttpRequest httpRequest)

@@ -63,7 +63,7 @@ namespace IRunes.App.Controllers
                 context.SaveChanges();
             }
 
-            return this.Redirect($"/Album/Details?id={albumId}");
+            return this.Redirect($"/Albums/Details?id={albumId}");
         }
 
         public IHttpResponse Details(IHttpRequest httpRequest)
