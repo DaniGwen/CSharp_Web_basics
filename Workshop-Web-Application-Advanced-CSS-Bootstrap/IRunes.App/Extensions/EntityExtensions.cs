@@ -49,10 +49,10 @@ namespace IRunes.App.Extensions
         public static string ToHtmlDetails(this Track track)
         {
             return $"<div class=\"track-details\">" +
-                   $"     <iframe src=\"{WebUtility.UrlDecode(track.Link)}\"></iframe>" +
+                   $"     <iframe src=\"{WebUtility.UrlDecode(track.Link)}\" width=\"640\" height=\"480\"></iframe>" +
                    $"       <h1>Track Name: {WebUtility.UrlDecode(track.Name)}</h1>" +
                    $"       <h1>Track Price: ${track.Price:F2}</h1>" +
-                $"</div>";
+                  $"</div>";
         }
     }
 }
