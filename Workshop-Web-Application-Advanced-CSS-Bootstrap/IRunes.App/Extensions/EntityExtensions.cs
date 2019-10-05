@@ -10,7 +10,7 @@ namespace IRunes.App.Extensions
         {
             return album.Tracks.Count == 0
                                       ? "There are no tracks"
-                                      : string.Join("", album.Tracks.Select((track, index) => track.ToHtmlAll(album.Id,index + 1)));
+                                      : string.Join("", album.Tracks.Select((track, index) => track.ToHtmlAll(album.Id, index + 1)));
         }
 
         public static string ToHtmlAll(this Album album)
@@ -20,30 +20,27 @@ namespace IRunes.App.Extensions
 
         public static string ToHtmlDetails(this Album album)
         {
-            return $"<div class=\"album-details\">" +
-                "     <div class=\"album-data\">" +
-                $"      <img src=\"{WebUtility.UrlDecode(album.Cover)}\">" +
-                $"      <h1>Album Name: {WebUtility.UrlDecode(album.Name)}</h1>" +
-                $"      <h1>Album Price: ${album.Price:F2}</h1>" +
-                $"      <br />" +
-                "   </div>" +
-                "   <div class=\"album-tracks\">" +
-                "       <h1>Tracks</h1>" +
-                "       <hr style=\"height: 2px\" />" +
-                $"       <a href=\"/Tracks/Create?albumId={album.Id}\">Create Track</a>" +
-                "       <hr style=\"height: 2px\" />" +
-                "       <ul class=\"tracks-list\">" +
-                $"        {GetTracks(album)}" +
-                "       </ul>" +
-                "       <hr style=\"height: 2px\" />" +
+            return
+                "<div class=\"album-details d-flex justify-content-between row\">" +
+                "    <div class=\"album-data col-md-5\">" +
+               $"    <img src=\"{WebUtility.UrlDecode(album.Cover)}\" class=\"img-thumbnail\" width=\"800\" height=\"300\" />" +
+               $"    <h1 class=\"text-center\">Album name: {WebUtility.UrlDecode(album.Name)}</h1>" +
+               $"    <h1 class=\"text-center\">Album price: ${album.Price:F2}</h1>" +
+                "    <div class=\"d-flex justify-content-between \">" +
+               $"         <a class=\"btn bg-success text-white\" href=\"/Tracks/Create?albumId={album.Id}\">Create Track</a>" +
+                "        <a class=\"btn bg-success text-white\" href=\"/Albums/All\">Back To All</a>" +
                 "    </div>" +
-                "  </div>";
-
+                "   </div>" +
+                "  <div class=\"album-tracks col-md-6\">" +
+                "    <h1>Tracks</h1>" +
+               $"    {GetTracks(album)}" +
+                "  </div>" +
+               "</div>";
         }
 
-        public static string ToHtmlAll(this Track track,string albumId, int index)
+        public static string ToHtmlAll(this Track track, string albumId, int index)
         {
-            return $"<li><strong>{index}</strong>.<a href=\"/Tracks/Details?albumId={albumId}&trackId={track.Id}\"> {WebUtility.UrlDecode(track.Name)}</a></li>";
+            return $"<li><strong>{index}</strong>.<a href=\"/Tracks/Details?albumId={albumId}&trackId={track.Id}\"> <i>{WebUtility.UrlDecode(track.Name)}</i></a></li>";
         }
 
         public static string ToHtmlDetails(this Track track)
