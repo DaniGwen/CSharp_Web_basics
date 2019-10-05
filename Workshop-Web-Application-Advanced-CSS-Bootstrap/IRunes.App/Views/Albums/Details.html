@@ -5,6 +5,12 @@
     <meta charset="utf-8" />
     <title>IRunes</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <style>
+        .img-thumbnail {
+            width: 700px;
+            height: 480px;
+        }
+    </style>
 </head>
 <body>
     <div class="container-fluid">
@@ -31,13 +37,23 @@
         </header>
         <hr class="bg-success" style="height: 2px" />
         <main>
-            @Model.Album
-            <hr style="height: 2px" />
-            <div>
-                <a href="/Albums/Details?id={{{albumId}}}">Back To Album</a>
+            <div class="album-details d-flex justify-content-between row">
+                <div class="album-data col-md-5">
+                    <img src="@Model.AlbumLink" class="img-thumbnail" width="800" height="300" />
+                    <h1 class="text-center">Album name: @Model.AlbumName</h1>
+                    <h1 class="text-center">Album price: @Model.AlbumPrice</h1>
+                    <div class="d-flex justify-content-between w-75">
+                        <a class="btn bg-success text-white" href="/Tracks/Create?albumId=@Model.AlbumId">Create Track</a>
+                        <a class="btn bg-success text-white" href="/Albums/All">Back To All</a>
+                    </div>
+                </div>
+                <div class="album-tracks col-md-6">
+                    <h1>Tracks</h1>
+                    <div><strong>1.</strong><a href="hdd"> <i>Revival</i></a></div>
+                </div>
             </div>
         </main>
-        <hr class="bg-success" style="height: 2px" />
+        <hr class="bg-success mt-5" style="height: 2px" />
         <footer class="bg-white">
             <h5 class="font-weight-bold text-center">CopyRight &copy; Sanity Design Studios. All rights reserved.</h5>
         </footer>
