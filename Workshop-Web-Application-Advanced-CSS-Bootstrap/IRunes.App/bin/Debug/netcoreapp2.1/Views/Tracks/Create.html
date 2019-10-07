@@ -33,22 +33,22 @@
         <main>
             <h1 class="text-center text-success">Create Track</h1>
             <hr class="bg-success" style="height: 2px" />
-            <form  action="/Tracks/Create?albumId=@Model.AlbumId" method="POST">
-                <div class="form-group ">
+            <form class="w-50 mx-auto" action="/Tracks/Create?albumId=@Model.AlbumId" method="POST">
+                <div class="form-group">
                     <label for="name">Name</label>
                     <input class="form-control" type="text" id="name" name="name" placeholder="Name..." />
                 </div>
-                <div>
+                <div class="form-row d-flex justify-content-around">
                     <div>
                         <label for="link">Link</label>
-                        <input type="text" id="link" name="link" placeholder="Link..." />
+                        <input class="form-control" type="text" id="link" name="link" placeholder="Link..." />
                     </div>
                     <div>
                         <label for="price">Price</label>
-                        <input type="text" id="price" name="price" placeholder="Price..." />
+                        <input class="form-control" type="text" id="price" name="price" placeholder="Price..." />
                     </div>
                 </div>
-                <hr style="height: 2px" />
+                <hr class="bg-success mt-4" style="height: 2px" />
                 <div>
                     <button type="submit">Create</button>
                     <a href="/Albums/Details?id=@Model.AlbumId">Back To Album</a>
@@ -59,6 +59,6 @@
         <footer class="bg-white">
             <h5 class="font-weight-bold text-center">CopyRight &copy; Sanity Design Studios. All rights reserved.</h5>
         </footer>
-        </div>
+    </div>
 </body>
 </html>
