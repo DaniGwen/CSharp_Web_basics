@@ -1,8 +1,8 @@
-﻿using IRunes.App.Extensions;
-using IRunes.Data;
-using IRunes.Models;
-using SIS.HTTP.Requests.Contracts;
-using SIS.HTTP.Responses.Contracts;
+﻿using IRunes.App.Data;
+using IRunes.App.Extensions;
+using IRunes.App.Models;
+using SIS.HTTP.Requests;
+using SIS.HTTP.Responses;
 using System;
 using System.Collections.Generic;
 using System.Linq;

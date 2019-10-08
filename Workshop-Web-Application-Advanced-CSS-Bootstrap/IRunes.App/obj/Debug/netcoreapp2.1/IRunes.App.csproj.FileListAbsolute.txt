@@ -3,13 +3,7 @@ C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanc
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\IRunes.App.runtimeconfig.dev.json
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\IRunes.App.dll
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\IRunes.App.pdb
-C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\IRunes.Data.dll
-C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\IRunes.Models.dll
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\SIS.HTTP.dll
-C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\SIS.WebServer.dll
-C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\IRunes.Data.pdb
-C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\SIS.WebServer.pdb
-C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\IRunes.Models.pdb
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\SIS.HTTP.pdb
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\obj\Debug\netcoreapp2.1\IRunes.App.csprojAssemblyReference.cache
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\obj\Debug\netcoreapp2.1\IRunes.App.csproj.CoreCompileInputs.cache
@@ -31,3 +25,5 @@ C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanc
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Views\Users\Login.html
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Views\Users\Register.html
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Views\Users\Home.html
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\SIS.MvcFramework.dll
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\SIS.MvcFramework.pdb

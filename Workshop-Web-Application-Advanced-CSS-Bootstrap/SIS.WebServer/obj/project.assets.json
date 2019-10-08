@@ -201,9 +201,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\SIS.WebServer\\SIS.WebServer.csproj",
-      "projectName": "SIS.WebServer",
-      "projectPath": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\SIS.WebServer\\SIS.WebServer.csproj",
+      "projectUniqueName": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\SIS.WebServer\\SIS.MvcFramework.csproj",
+      "projectName": "SIS.MvcFramework",
+      "projectPath": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\SIS.WebServer\\SIS.MvcFramework.csproj",
       "packagesPath": "C:\\Users\\thinkpad\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\SIS.WebServer\\obj\\",
       "projectStyle": "PackageReference",

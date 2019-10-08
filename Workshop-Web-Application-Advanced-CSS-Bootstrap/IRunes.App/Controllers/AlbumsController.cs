@@ -1,14 +1,11 @@
-﻿using IRunes.App.Extensions;
-using IRunes.Data;
-using IRunes.Models;
+﻿using IRunes.App.Data;
+using IRunes.App.Extensions;
+using IRunes.App.Models;
 using Microsoft.EntityFrameworkCore;
-using SIS.HTTP.Requests.Contracts;
+using SIS.HTTP.Requests;
 using SIS.HTTP.Responses;
-using SIS.HTTP.Responses.Contracts;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace IRunes.App.Controllers
 {
