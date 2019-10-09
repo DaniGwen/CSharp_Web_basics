@@ -70,7 +70,7 @@ namespace IRunes.App
 
         public void ConfigureServices()
         {
-            throw new System.NotImplementedException();
+          
         }
     }
 }

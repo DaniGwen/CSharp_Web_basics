@@ -31,9 +31,8 @@ namespace IRunes.App.Controllers
                 string username = ((ISet<string>)httpRequest.FormData["username"]).FirstOrDefault();
                 string password = ((ISet<string>)httpRequest.FormData["password"]).FirstOrDefault();
 
-                //FIX THIS!
                 User userFromDb = context.Users
-                    .FirstOrDefault(user => (user.Username == username
+                    .First(user => (user.Username == username
                                                            || user.Email == username)
                                                            && user.Password == this.HashPassword(password));
 

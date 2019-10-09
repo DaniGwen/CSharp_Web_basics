@@ -9,7 +9,9 @@ namespace SIS.MvcFramework
     {
         public static void Start(IMvcApplication application)
         {
+            application.ConfigureServices();
 
+            application.Configure();
         }
     }
 }

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "ce6b76794ae676b4805987e02d794ee29519bc2a"
+    "signature": "6f4fd1d903f7fa0e0d455c8214229984e4e3ec87"
   },
   "compilationOptions": {},
   "targets": {
@@ -9,6 +9,7 @@
       "IRunes.App/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "2.2.0",
+          "Microsoft.EntityFrameworkCore.Relational": "2.2.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.1",
           "Microsoft.EntityFrameworkCore.Tools": "2.1.3",
           "SIS.HTTP": "1.0.0",
@@ -51,7 +52,7 @@
       "Microsoft.EntityFrameworkCore.Design/2.1.3": {
         "dependencies": {
           "Microsoft.CSharp": "4.5.0",
-          "Microsoft.EntityFrameworkCore.Relational": "2.1.3"
+          "Microsoft.EntityFrameworkCore.Relational": "2.2.0"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll": {
@@ -60,20 +61,20 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/2.1.3": {
+      "Microsoft.EntityFrameworkCore.Relational/2.2.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "2.2.0"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.dll": {
-            "assemblyVersion": "2.1.3.0",
-            "fileVersion": "2.1.3.18226"
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.18316"
           }
         }
       },
       "Microsoft.EntityFrameworkCore.SqlServer/2.0.1": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Relational": "2.1.3",
+          "Microsoft.EntityFrameworkCore.Relational": "2.2.0",
           "System.Data.SqlClient": "4.4.0"
         },
         "runtime": {
@@ -579,12 +580,12 @@
       "path": "microsoft.entityframeworkcore.design/2.1.3",
       "hashPath": "microsoft.entityframeworkcore.design.2.1.3.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Relational/2.1.3": {
+    "Microsoft.EntityFrameworkCore.Relational/2.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-52OppHAoBWwax+9AJPmTdapiV6VbMaKRRd9ZMgSSgmmV1cfXxF4Zi394znxsbsKDv5JpkYignUBV0nHmZzb8uA==",
-      "path": "microsoft.entityframeworkcore.relational/2.1.3",
-      "hashPath": "microsoft.entityframeworkcore.relational.2.1.3.nupkg.sha512"
+      "sha512": "sha512-CRJHHp/GqmXByeeODgbDgMDWId9kKT9TDRzHF8voWHFNTajBQl0U4jaMrHxjIP6hJ2olF8n+5GYmQv+v3bUVKQ==",
+      "path": "microsoft.entityframeworkcore.relational/2.2.0",
+      "hashPath": "microsoft.entityframeworkcore.relational.2.2.0.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.SqlServer/2.0.1": {
       "type": "package",
