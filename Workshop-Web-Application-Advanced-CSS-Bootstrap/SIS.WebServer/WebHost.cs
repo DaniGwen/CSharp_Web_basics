@@ -1,4 +1,6 @@
 ﻿using IRunes.App;
+using SIS.WebServer;
+using SIS.WebServer.Routing;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,9 +11,14 @@ namespace SIS.MvcFramework
     {
         public static void Start(IMvcApplication application)
         {
+            ServerRoutingTable serverRoutingTable = new ServerRoutingTable();
+
             application.ConfigureServices();
 
-            application.Configure();
+            application.Configure(serverRoutingTable);
+
+            Server server = new Server(8000, serverRoutingTable);
+            server.Run();
         }
     }
 }

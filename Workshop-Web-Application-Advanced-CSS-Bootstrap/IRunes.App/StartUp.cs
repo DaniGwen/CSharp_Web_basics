@@ -9,14 +9,12 @@ namespace IRunes.App
 {
     public class StartUp : IMvcApplication
     {
-        public void Configure()
+        public void Configure(ServerRoutingTable serverRoutingTable)
         {
             using (var context = new RunesDbContext())
             {
                 context.Database.EnsureCreated();
             }
-
-            ServerRoutingTable serverRoutingTable = new ServerRoutingTable();
 
             #region Home Routes
 
@@ -63,9 +61,7 @@ namespace IRunes.App
             .Details(request));
 
             #endregion
-
-            Server server = new Server(8000, serverRoutingTable);
-            server.Run();
+        
         }
 
         public void ConfigureServices()
