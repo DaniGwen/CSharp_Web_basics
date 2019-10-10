@@ -1,25 +1,23 @@
-﻿using IRunes.App.Models;
+﻿
 using SIS.HTTP.Enums;
 using SIS.HTTP.Requests;
 using SIS.HTTP.Responses;
 using SIS.WebServer.Result;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.CompilerServices;
-using System.Text;
 
-namespace IRunes.App.Controllers
+namespace SIS.MvcFramework
 {
-    public abstract class BaseController
+    public abstract class Controller
     {
         protected Dictionary<string, object> ViewData;
 
         public object Htmlresult { get; private set; }
 
-        protected BaseController()
+        protected Controller()
         {
-            this.ViewData = new Dictionary<string, object>();
+            ViewData = new Dictionary<string, object>();
         }
 
         protected bool IsLoggedIn(IHttpRequest httpRequest)
@@ -27,11 +25,11 @@ namespace IRunes.App.Controllers
             return httpRequest.Session.ContainsParameter("username");
         }
 
-        protected void SignIn(IHttpRequest httpRequest, User userFromDb)
+        protected void SignIn(IHttpRequest httpRequest, string id, string username,string email)
         {
-            httpRequest.Session.AddParameter("username", userFromDb.Username);
-            httpRequest.Session.AddParameter("email", userFromDb.Email);
-            httpRequest.Session.AddParameter("id", userFromDb.Id);
+            httpRequest.Session.AddParameter("username", username);
+            httpRequest.Session.AddParameter("email", email);
+            httpRequest.Session.AddParameter("id", id);
         }
 
         protected void SignOut(IHttpRequest httpRequest)
@@ -41,23 +39,24 @@ namespace IRunes.App.Controllers
 
         private string ParseTemplate(string viewContent)
         {
-            foreach (var param in this.ViewData)
+            foreach (var param in ViewData)
             {
                 viewContent = viewContent.Replace($"@Model.{param.Key}", param.Value.ToString());
             }
 
             return viewContent;
         }
-
+                                        
+                                    //Takes the name of the calling method    
         protected IHttpResponse View([CallerMemberName] string view = null)
         {
-            string controllerName = this.GetType().Name.Replace("Controller", string.Empty);
+            string controllerName = GetType().Name.Replace("Controller", string.Empty);
 
             string viewName = view;
 
             string viewContent = File.ReadAllText("Views/" + controllerName + "/" + viewName + ".html");
 
-            viewContent = this.ParseTemplate(viewContent);
+            viewContent = ParseTemplate(viewContent);
 
             HtmlResult htmlResult = new HtmlResult(viewContent, HttpResponseStatusCode.Ok);
 

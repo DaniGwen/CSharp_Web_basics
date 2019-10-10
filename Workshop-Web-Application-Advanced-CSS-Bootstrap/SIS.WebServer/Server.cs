@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using SIS.HTTP.Common;
 using SIS.WebServer.Routing;
 
-namespace SIS.WebServer
+namespace SIS.MvcFramework
 {
     public class Server
     {
@@ -26,26 +26,26 @@ namespace SIS.WebServer
             this.port = port;
             this.serverRoutingTable = serverRoutingTable;
 
-            this.tcpListener = new TcpListener(IPAddress.Parse(LocalHostIpAddress), port);
+            tcpListener = new TcpListener(IPAddress.Parse(LocalHostIpAddress), port);
         }
 
         private async Task ListenAsync(Socket client)
         {
-            var connectionHandler = new ConnectionHandler(client, this.serverRoutingTable);
+            var connectionHandler = new ConnectionHandler(client, serverRoutingTable);
             await connectionHandler.ProcessRequestAsync();
         }
 
         public void Run()
         {
-            this.tcpListener.Start();
-            this.isRunning = true;
+            tcpListener.Start();
+            isRunning = true;
 
-            Console.WriteLine($"Server started at http://{LocalHostIpAddress}:{this.port}");
+            Console.WriteLine($"Server started at http://{LocalHostIpAddress}:{port}");
 
-            while (this.isRunning)
+            while (isRunning)
             {
-                var client = this.tcpListener.AcceptSocketAsync().GetAwaiter().GetResult();
-                Task.Run(() => this.ListenAsync(client));
+                var client = tcpListener.AcceptSocketAsync().GetAwaiter().GetResult();
+                Task.Run(() => ListenAsync(client));
             }
         }
     }

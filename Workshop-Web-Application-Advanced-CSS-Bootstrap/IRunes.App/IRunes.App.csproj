@@ -46,6 +46,9 @@
     <None Update="Views\Albums\Details.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Views\Info\About.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Views\Users\Home.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

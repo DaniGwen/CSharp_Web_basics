@@ -1,10 +1,10 @@
 ﻿using SIS.WebServer.Routing;
 
-namespace IRunes.App
+namespace SIS.MvcFramework
 {
     public interface IMvcApplication
     {
-        void Configure(ServerRoutingTable serverRoutingTable);
+        void Configure(IServerRoutingTable serverRoutingTable);
 
         void ConfigureServices(); // DI
     }

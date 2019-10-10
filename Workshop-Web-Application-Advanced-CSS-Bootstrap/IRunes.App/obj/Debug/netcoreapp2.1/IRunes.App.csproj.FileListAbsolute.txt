@@ -27,3 +27,4 @@ C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanc
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Views\Users\Home.html
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\SIS.MvcFramework.dll
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\SIS.MvcFramework.pdb
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\Views\Info\About.html
