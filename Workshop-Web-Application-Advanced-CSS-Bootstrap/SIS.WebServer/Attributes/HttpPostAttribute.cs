@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SIS.MvcFramework.Attributes
 {
-    public class HttpPostAttribute : Attribute
+    public class HttpPostAttribute : BaseHttpAttribute
     {
     }
 }

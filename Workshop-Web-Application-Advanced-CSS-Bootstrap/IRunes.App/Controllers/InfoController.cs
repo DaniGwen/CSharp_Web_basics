@@ -10,5 +10,10 @@
         {
             return this.View();
         }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }
