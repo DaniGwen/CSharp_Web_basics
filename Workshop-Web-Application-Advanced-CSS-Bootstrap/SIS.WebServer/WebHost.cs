@@ -1,4 +1,5 @@
 ﻿using SIS.HTTP.Enums;
+using SIS.HTTP.Responses;
 using SIS.MvcFramework.Attributes;
 using SIS.WebServer.Routing;
 using System;
@@ -43,23 +44,34 @@ namespace SIS.MvcFramework
 
                 foreach (var action in actions)
                 {
-                    var url = $"/{controller.Name.Replace("Controller", string.Empty)}/{action.Name}";
-                    var attribute = action.CustomAttributes
-                        .Where(x => x.AttributeType.IsSubclassOf(typeof(BaseHttpAttribute)));
+                    var path = $"/{controller.Name.Replace("Controller", string.Empty)}/{action.Name}";
+
+                    var attribute = action.GetCustomAttributes() as BaseHttpAttribute;
 
                     var httpMethod = HttpRequestMethod.Get;
-                    if (attribute?.AttributeType == typeof(HttpPostAttribute))
+
+                    if (attribute != null)
                     {
-                        httpMethod = HttpRequestMethod.Post;
-                    }
-                    else if (attribute?.AttributeType == typeof(HttpDeleteAttribute))
-                    {
-                        httpMethod = HttpRequestMethod.Delete;
+                        httpMethod = attribute.Method; 
                     }
 
-                    serverRoutingTable.Add()
+                    if (attribute?.Url != null)
+                    {
+                        path = attribute.Url;
+                    }
 
-                    Console.WriteLine(httpMethod + " " + url);
+                    if (attribute?.ActionName != null)
+                    {
+                        path = $"/{controller.Name.Replace("Controller", string.Empty)}/{attribute.ActionName}";
+                    }
+                    serverRoutingTable.Add(httpMethod, path, request =>
+                    {
+                        var controllerInstance = Activator.CreateInstance(controller);
+                        var response = action.Invoke(controllerInstance, new[] { request }) as IHttpResponse;
+                        return response;
+                    });
+
+                    Console.WriteLine(httpMethod + " " + path);
                 }
 
             }

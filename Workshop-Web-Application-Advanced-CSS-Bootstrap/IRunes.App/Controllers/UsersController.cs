@@ -26,7 +26,7 @@ namespace IRunes.App.Controllers
             return this.View();
         }
 
-        [HttpPost]
+        [HttpPost(ActionName = "Login")]
         public IHttpResponse LoginConfirm(IHttpRequest httpRequest)
         {
             using (var context = new RunesDbContext())
