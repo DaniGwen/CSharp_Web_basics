@@ -1,10 +1,7 @@
-﻿
-using SIS.HTTP.Enums;
+﻿using SIS.HTTP.Enums;
 using SIS.HTTP.Requests;
-using SIS.HTTP.Responses;
 using SIS.MvcFramework.Result;
 using System.Collections.Generic;
-using System.IO;
 using System.Runtime.CompilerServices;
 
 namespace SIS.MvcFramework
@@ -48,7 +45,7 @@ namespace SIS.MvcFramework
         }
                                         
                                     //Takes the name of the calling method    
-        protected IHttpResponse View([CallerMemberName] string view = null)
+        protected ActionResult View([CallerMemberName] string view = null)
         {
             string controllerName = GetType().Name.Replace("Controller", string.Empty);
 
@@ -63,9 +60,24 @@ namespace SIS.MvcFramework
             return htmlResult;
         }
 
-        protected IHttpResponse Redirect(string url)
+        protected ActionResult Redirect(string url)
         {
             return new RedirectResult(url);
+        }
+
+        protected ActionResult Xml(object param)
+        {
+            return null;
+        }
+
+        protected ActionResult Jason(object param)
+        {
+            return null;
+        }
+
+        protected ActionResult File(string param)
+        {
+            return null;
         }
     }
 }

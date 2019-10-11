@@ -5,7 +5,7 @@ using SIS.HTTP.Responses;
 
 namespace SIS.MvcFramework.Result
 {
-    public class HtmlResult : HttpResponse
+    public class HtmlResult : ActionResult
     {
         public HtmlResult(string content, HttpResponseStatusCode responseStatusCode = HttpResponseStatusCode.Ok) : base(responseStatusCode)
         {
