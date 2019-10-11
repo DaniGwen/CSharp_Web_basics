@@ -46,13 +46,14 @@ namespace SIS.MvcFramework
                 {
                     var path = $"/{controller.Name.Replace("Controller", string.Empty)}/{action.Name}";
 
-                    var attribute = action.GetCustomAttributes() as BaseHttpAttribute;
+                    var attribute = action.GetCustomAttributes()
+                        .Where(x => x.GetType().IsSubclassOf(typeof(BaseHttpAttribute))).LastOrDefault() as BaseHttpAttribute;
 
                     var httpMethod = HttpRequestMethod.Get;
 
                     if (attribute != null)
                     {
-                        httpMethod = attribute.Method; 
+                        httpMethod = attribute.Method;
                     }
 
                     if (attribute?.Url != null)

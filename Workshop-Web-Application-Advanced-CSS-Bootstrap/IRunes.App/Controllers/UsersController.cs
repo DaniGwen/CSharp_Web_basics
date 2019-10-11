@@ -57,7 +57,7 @@ namespace IRunes.App.Controllers
             return this.View();
         }
 
-        [HttpPost]
+        [HttpPost(ActionName = "Register")]
         public IHttpResponse RegisterConfirm(IHttpRequest request)
         {
             using (var context = new RunesDbContext())

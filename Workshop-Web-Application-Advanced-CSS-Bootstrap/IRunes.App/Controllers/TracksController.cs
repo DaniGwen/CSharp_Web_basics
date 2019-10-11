@@ -28,7 +28,7 @@ namespace IRunes.App.Controllers
 
         }
 
-        [HttpPost]
+        [HttpPost(ActionName = "Create")]
         public IHttpResponse CreateConfirm(IHttpRequest httpRequest)
         {
             if (!this.IsLoggedIn(httpRequest))
