@@ -1,6 +1,7 @@
 ﻿using SIS.HTTP.Enums;
 using SIS.HTTP.Responses;
 using SIS.MvcFramework.Attributes;
+using SIS.MvcFramework.Attributes.Action;
 using SIS.WebServer.Routing;
 using System;
 using System.Collections.Generic;
@@ -31,8 +32,8 @@ namespace SIS.MvcFramework
             var controllers = application.GetType()
                  .Assembly
                  .GetTypes()
-                 .Where(type => type.IsClass && !type.IsAbstract && typeof(Controller).IsAssignableFrom(type));
-            //type.IsSubclassOf(typeof(Controller))
+                 .Where(type => type.IsClass && !type.IsAbstract && typeof(Controller).IsAssignableFrom(type))
+                 .Where(x=> x.GetCustomAttributes().All(a => a.GetType() != typeof(NonActionAttribute)));
 
             foreach (var controller in controllers)
             {

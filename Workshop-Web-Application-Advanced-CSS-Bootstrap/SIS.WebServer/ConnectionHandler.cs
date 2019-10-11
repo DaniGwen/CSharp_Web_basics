@@ -12,7 +12,7 @@
     using SIS.HTTP.Exceptions;
     using SIS.HTTP.Requests;
     using SIS.HTTP.Responses;
-    using SIS.WebServer.Result;
+    using SIS.MvcFramework.Result;
     using SIS.WebServer.Routing;
     using SIS.WebServer.Sessions;
 
