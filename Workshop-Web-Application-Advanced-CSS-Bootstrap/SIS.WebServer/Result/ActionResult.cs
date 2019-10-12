@@ -12,7 +12,6 @@ namespace SIS.MvcFramework.Result
     {
         protected ActionResult(HttpResponseStatusCode httpResponseStatusCode) : base(httpResponseStatusCode)
         {
-
         }
     }
 }
