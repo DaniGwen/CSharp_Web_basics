@@ -13,6 +13,7 @@ namespace IRunes.App.Controllers
 {
     public class UsersController : Controller
     {
+
         private string HashPassword(string password)
         {
             using (SHA256 sha256Hash = SHA256.Create())
@@ -27,12 +28,12 @@ namespace IRunes.App.Controllers
         }
 
         [HttpPost(ActionName = "Login")]
-        public IHttpResponse LoginConfirm(IHttpRequest httpRequest)
+        public IHttpResponse LoginConfirm()
         {
             using (var context = new RunesDbContext())
             {
-                string username = ((ISet<string>)httpRequest.FormData["username"]).FirstOrDefault();
-                string password = ((ISet<string>)httpRequest.FormData["password"]).FirstOrDefault();
+                string username = ((ISet<string>)this.Request.FormData["username"]).FirstOrDefault();
+                string password = ((ISet<string>)this.Request.FormData["password"]).FirstOrDefault();
 
                 User userFromDb = context.Users
                     .FirstOrDefault(user => (user.Username == username
@@ -44,28 +45,28 @@ namespace IRunes.App.Controllers
                     return this.Redirect("/Users/Login");
                 }
 
-                this.SignIn(httpRequest, userFromDb.Id ,userFromDb.Username, userFromDb.Email);
+                this.SignIn(userFromDb.Id ,userFromDb.Username, userFromDb.Email);
             }
 
-            this.ViewData["Username"] = httpRequest.Session.GetParameter("username");
+            this.ViewData["Username"] = this.Request.Session.GetParameter("username");
 
             return this.View("Home");
         }
 
-        public IHttpResponse Register(IHttpRequest request)
+        public IHttpResponse Register()
         {
             return this.View();
         }
 
         [HttpPost(ActionName = "Register")]
-        public IHttpResponse RegisterConfirm(IHttpRequest request)
+        public IHttpResponse RegisterConfirm()
         {
             using (var context = new RunesDbContext())
             {
-                string username = ((ISet<string>)request.FormData["username"]).FirstOrDefault();
-                string password = ((ISet<string>)request.FormData["password"]).FirstOrDefault();
-                string confirmPassword = ((ISet<string>)request.FormData["confirmPassword"]).FirstOrDefault();
-                string email = ((ISet<string>)request.FormData["email"]).FirstOrDefault();
+                string username = ((ISet<string>)this.Request.FormData["username"]).FirstOrDefault();
+                string password = ((ISet<string>)this.Request.FormData["password"]).FirstOrDefault();
+                string confirmPassword = ((ISet<string>)this.Request.FormData["confirmPassword"]).FirstOrDefault();
+                string email = ((ISet<string>)this.Request.FormData["email"]).FirstOrDefault();
 
                 if (password != confirmPassword)
                 {
@@ -86,9 +87,9 @@ namespace IRunes.App.Controllers
             return this.Redirect("/Users/Login");
         }
 
-        public IHttpResponse Logout(IHttpRequest request)
+        public IHttpResponse Logout()
         {
-            this.SignOut(request);
+            this.SignOut();
 
             return this.Redirect("/");
         }

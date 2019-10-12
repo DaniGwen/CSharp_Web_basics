@@ -16,7 +16,7 @@ namespace IRunes.App.Controllers
 
         public IHttpResponse All(IHttpRequest httpRequest)
         {
-            if (!this.IsLoggedIn(httpRequest))
+            if (!this.IsLoggedIn())
             {
                 return this.Redirect("/Users/Login");
             }
@@ -42,7 +42,7 @@ namespace IRunes.App.Controllers
 
         public IHttpResponse Create(IHttpRequest httpRequest)
         {
-            if (!this.IsLoggedIn(httpRequest))
+            if (!this.IsLoggedIn())
             {
                 return this.Redirect("/Users/Login");
             }
@@ -53,7 +53,7 @@ namespace IRunes.App.Controllers
         [HttpPost(ActionName = "Create")]
         public IHttpResponse CreateConfirm(IHttpRequest httpRequest)
         {
-            if (!this.IsLoggedIn(httpRequest))
+            if (!this.IsLoggedIn())
             {
                 return this.Redirect("/Users/Login");
             }
@@ -79,7 +79,7 @@ namespace IRunes.App.Controllers
 
         public IHttpResponse Details(IHttpRequest httpRequest)
         {
-            if (!this.IsLoggedIn(httpRequest))
+            if (!this.IsLoggedIn())
             {
                 return this.Redirect("/Users/Login");
             }

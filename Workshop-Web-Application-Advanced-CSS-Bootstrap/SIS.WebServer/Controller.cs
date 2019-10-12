@@ -24,21 +24,25 @@ namespace SIS.MvcFramework
 
         public IHttpRequest Request { get; set; }
 
-        protected bool IsLoggedIn(IHttpRequest httpRequest)
+        protected bool IsLoggedIn()
         {
-            return httpRequest.Session.ContainsParameter("username");
+            return this.User != null;
         }
 
-        protected void SignIn(IHttpRequest httpRequest, string id, string username, string email)
+        protected void SignIn(string id, string username, string email)
         {
-            httpRequest.Session.AddParameter("username", username);
-            httpRequest.Session.AddParameter("email", email);
-            httpRequest.Session.AddParameter("id", id);
+         this.Request.Session.AddParameter("principal", new Principal
+         {
+             Id = id,
+             Username = username,
+             Email = email
+         });
+       
         }
 
-        protected void SignOut(IHttpRequest httpRequest)
+        protected void SignOut()
         {
-            httpRequest.Session.ClearParameters();
+            this.Request.Session.ClearParameters();
         }
 
         private string ParseTemplate(string viewContent)

@@ -2,6 +2,7 @@
 using SIS.HTTP.Responses;
 using SIS.MvcFramework.Attributes;
 using SIS.MvcFramework.Attributes.Action;
+using SIS.MvcFramework.Result;
 using SIS.WebServer.Routing;
 using System;
 using System.Collections.Generic;
@@ -70,7 +71,7 @@ namespace SIS.MvcFramework
                     {
                         var controllerInstance = Activator.CreateInstance(controller);
                         ((Controller)controllerInstance).Request = request;
-                        var response = action.Invoke(controllerInstance, new[] { request }) as IHttpResponse;
+                        var response = action.Invoke(controllerInstance, new object[0]) as ActionResult;
                         return response;
                     });
 
