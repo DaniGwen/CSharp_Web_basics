@@ -1,9 +1,9 @@
 ﻿using IRunes.App.Data;
 using IRunes.App.Models;
-using SIS.HTTP.Requests;
-using SIS.HTTP.Responses;
 using SIS.MvcFramework;
 using SIS.MvcFramework.Attributes;
+using SIS.MvcFramework.Attributes.Action;
+using SIS.MvcFramework.Result;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -13,7 +13,7 @@ namespace IRunes.App.Controllers
 {
     public class UsersController : Controller
     {
-
+        [NonAction]
         private string HashPassword(string password)
         {
             using (SHA256 sha256Hash = SHA256.Create())
@@ -22,13 +22,13 @@ namespace IRunes.App.Controllers
             }
         }
 
-        public IHttpResponse Login(IHttpRequest request)
+        public ActionResult Login()
         {
             return this.View();
         }
 
         [HttpPost(ActionName = "Login")]
-        public IHttpResponse LoginConfirm()
+        public ActionResult LoginConfirm()
         {
             using (var context = new RunesDbContext())
             {
@@ -53,13 +53,13 @@ namespace IRunes.App.Controllers
             return this.View("Home");
         }
 
-        public IHttpResponse Register()
+        public ActionResult Register()
         {
             return this.View();
         }
 
         [HttpPost(ActionName = "Register")]
-        public IHttpResponse RegisterConfirm()
+        public ActionResult RegisterConfirm()
         {
             using (var context = new RunesDbContext())
             {
@@ -87,7 +87,7 @@ namespace IRunes.App.Controllers
             return this.Redirect("/Users/Login");
         }
 
-        public IHttpResponse Logout()
+        public ActionResult Logout()
         {
             this.SignOut();
 
