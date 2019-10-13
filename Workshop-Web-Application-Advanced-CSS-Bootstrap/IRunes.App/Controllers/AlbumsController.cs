@@ -1,6 +1,7 @@
 ﻿using IRunes.App.Data;
 using IRunes.App.Extensions;
 using IRunes.App.Models;
+using IRunes.Services;
 using Microsoft.EntityFrameworkCore;
 using SIS.MvcFramework;
 using SIS.MvcFramework.Attributes;
@@ -13,6 +14,13 @@ namespace IRunes.App.Controllers
 {
     public class AlbumsController : Controller
     {
+        private readonly IAlbumService albumService;
+
+        public AlbumsController()
+        {
+            this.albumService = new AlbumService();
+        }
+
         [Authorize]
         public ActionResult All()
         {
@@ -44,14 +52,19 @@ namespace IRunes.App.Controllers
         [HttpPost(ActionName = "Create")]
         public ActionResult CreateConfirm()
         {
-            if (!this.IsLoggedIn())
+            string name = ((ISet<string>)this.Request.FormData["name"]).FirstOrDefault();
+            string cover = ((ISet<string>)this.Request.FormData["cover"]).FirstOrDefault();
+
+            var album = new Album
             {
-                return this.Redirect("/Users/Login");
-            }
+                Cover = cover,
+                Name = name,
+                Price = 0M
+            };
 
-           
+            this.albumService.CreateAlbum(album);
 
-            return this.View("/All");
+            return this.Redirect("/Albums/All");
         }
 
         [Authorize]
@@ -61,9 +74,7 @@ namespace IRunes.App.Controllers
 
             using (var context = new RunesDbContext())
             {
-                Album albumFromDb = context.Albums
-                    .Include(album => album.Tracks)
-                    .SingleOrDefault(album => album.Id == albumId);
+                Album albumFromDb = this.albumService.GetAlbumById(albumId);
 
                 if (albumFromDb == null)
                 {

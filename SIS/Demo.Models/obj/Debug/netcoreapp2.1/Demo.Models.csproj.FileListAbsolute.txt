@@ -1,9 +1,0 @@
-C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Models\bin\Debug\netcoreapp2.1\Demo.Models.deps.json
-C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Models\bin\Debug\netcoreapp2.1\Demo.Models.dll
-C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Models\bin\Debug\netcoreapp2.1\Demo.Models.pdb
-C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Models\obj\Debug\netcoreapp2.1\Demo.Models.csprojAssemblyReference.cache
-C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Models\obj\Debug\netcoreapp2.1\Demo.Models.csproj.CoreCompileInputs.cache
-C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Models\obj\Debug\netcoreapp2.1\Demo.Models.AssemblyInfoInputs.cache
-C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Models\obj\Debug\netcoreapp2.1\Demo.Models.AssemblyInfo.cs
-C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Models\obj\Debug\netcoreapp2.1\Demo.Models.dll
-C:\Users\thinkpad\Documents\GitHub\C# Web basics\SIS\Demo.Models\obj\Debug\netcoreapp2.1\Demo.Models.pdb

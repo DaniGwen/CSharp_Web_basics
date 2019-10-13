@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\IRunes.App\IRunes.App.csproj" />
+    <ProjectReference Include="..\IRunes.Data\IRunes.Data.csproj" />
+    <ProjectReference Include="..\IRunes.Models\IRunes.Models.csproj" />
   </ItemGroup>
 
 </Project>

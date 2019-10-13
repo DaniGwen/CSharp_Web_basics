@@ -1,0 +1,4 @@
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\obj\Debug\netcoreapp2.0\IRunes.App.csprojAssemblyReference.cache
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\obj\Debug\netcoreapp2.0\IRunes.App.csproj.CoreCompileInputs.cache
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\obj\Debug\netcoreapp2.0\IRunes.App.AssemblyInfoInputs.cache
+C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\obj\Debug\netcoreapp2.0\IRunes.App.AssemblyInfo.cs

@@ -1,7 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using IRunes.App.Data;
 using IRunes.App.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace IRunes.Services
 {
@@ -11,35 +14,27 @@ namespace IRunes.Services
 
         public AlbumService()
         {
-
+            this.context = new RunesDbContext();
         }
+
         public Album CreateAlbum(Album album)
         {
-            using (var context = new RunesDbContext())
-            {
-                string name = ((ISet<string>)this.Request.FormData["name"]).FirstOrDefault();
-                string cover = ((ISet<string>)this.Request.FormData["cover"]).FirstOrDefault();
-
-                var album = new Album
-                {
-                    Cover = cover,
-                    Name = name,
-                    Price = 0M
-                };
-
-                context.Albums.Add(album);
+                album = context.Albums.Add(album).Entity;
                 context.SaveChanges();
-            }
+
+            return album;
         }
 
         public Album GetAlbumById(string id)
         {
-            throw new NotImplementedException();
+            return this.context.Albums
+                .Include(a => a.Tracks)
+                .SingleOrDefault(album => album.Id == id);
         }
 
         public ICollection<Album> GetAllAlbums()
         {
-            throw new NotImplementedException();
+            return context.Albums.ToList();
         }
     }
 }
