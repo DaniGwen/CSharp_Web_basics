@@ -1,7 +1,5 @@
-﻿using SIS.MvcFramework.Identity;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
+using SIS.MvcFramework.Identity;
 
 namespace SIS.MvcFramework.Attributes.Security
 {
@@ -25,8 +23,9 @@ namespace SIS.MvcFramework.Attributes.Security
             {
                 return this.authority == "anonymous";
             }
-
-            return this.authority == "authorized" || principal.Roles.Contains(this.authority.ToLower());
+           
+            return this.authority == "authorized" 
+                   || principal.Roles.Contains(this.authority.ToLower());
         }
     }
 }

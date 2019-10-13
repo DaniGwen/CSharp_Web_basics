@@ -45,10 +45,10 @@ namespace IRunes.App.Controllers
                     return this.Redirect("/Users/Login");
                 }
 
-                this.SignIn(userFromDb.Id ,userFromDb.Username, userFromDb.Email);
+                this.SignIn(userFromDb.Id, userFromDb.Username, userFromDb.Email);
             }
 
-            this.ViewData["Username"] = this.Request.Session.GetParameter("username");
+            this.ViewData["Username"] = this.Request.Session.GetParameter("principal");
 
             return this.View("Home");
         }

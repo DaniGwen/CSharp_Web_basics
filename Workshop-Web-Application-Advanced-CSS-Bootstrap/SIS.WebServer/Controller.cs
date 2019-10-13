@@ -15,29 +15,31 @@ namespace SIS.MvcFramework
 
         protected Controller()
         {
-            ViewData = new Dictionary<string, object>();    
+            ViewData = new Dictionary<string, object>();
         }
 
         protected Dictionary<string, object> ViewData;
 
-        protected Principal User => (Principal)this.Request.Session.GetParameter("principal");
+        public Principal User =>
+            this.Request.Session.ContainsParameter("principal")
+            ? (Principal)this.Request.Session.GetParameter("principal")
+            : null;
 
         public IHttpRequest Request { get; set; }
 
         protected bool IsLoggedIn()
         {
-            return this.User != null;
+            return this.Request.Session.ContainsParameter("principal");
         }
 
         protected void SignIn(string id, string username, string email)
         {
-         this.Request.Session.AddParameter("principal", new Principal
-         {
-             Id = id,
-             Username = username,
-             Email = email
-         });
-       
+            this.Request.Session.AddParameter("principal", new Principal
+            {
+                Id = id,
+                Username = username,
+                Email = email
+            });
         }
 
         protected void SignOut()

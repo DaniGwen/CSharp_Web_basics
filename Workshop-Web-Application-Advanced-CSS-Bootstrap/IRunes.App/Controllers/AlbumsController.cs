@@ -49,21 +49,7 @@ namespace IRunes.App.Controllers
                 return this.Redirect("/Users/Login");
             }
 
-            using (var context = new RunesDbContext())
-            {
-                string name = ((ISet<string>)this.Request.FormData["name"]).FirstOrDefault();
-                string cover = ((ISet<string>)this.Request.FormData["cover"]).FirstOrDefault();
-
-                var album = new Album
-                {
-                    Cover = cover,
-                    Name = name,
-                    Price = 0M
-                };
-
-                context.Albums.Add(album);
-                context.SaveChanges();
-            }
+           
 
             return this.View("/All");
         }
