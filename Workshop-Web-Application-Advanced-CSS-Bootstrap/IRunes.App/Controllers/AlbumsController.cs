@@ -1,8 +1,7 @@
-﻿using IRunes.App.Data;
-using IRunes.App.Extensions;
+﻿using IRunes.App.Extensions;
 using IRunes.App.Models;
 using IRunes.Services;
-using Microsoft.EntityFrameworkCore;
+using IRunes.Services.Contracts;
 using SIS.MvcFramework;
 using SIS.MvcFramework.Attributes;
 using SIS.MvcFramework.Attributes.Security;
@@ -24,22 +23,20 @@ namespace IRunes.App.Controllers
         [Authorize]
         public ActionResult All()
         {
-            using (var context = new RunesDbContext())
+            ICollection<Album> allAlbums = this.albumService.GetAllAlbums();
+
+            if (allAlbums.Count == 0)
             {
-                ICollection<Album> allAlbums = context.Albums.ToList();
-
-                if (allAlbums.Count == 0)
-                {
-                    this.ViewData["Albums"] = "There are currently no albums.";
-                }
-                else
-                {
-                    this.ViewData["Albums"] = string
-                        .Join("<br />", allAlbums.Select(album => album.ToHtmlAll()).ToList());
-                }
-
-                return this.View();
+                this.ViewData["Albums"] = "There are currently no albums.";
             }
+            else
+            {
+                this.ViewData["Albums"] = string
+                    .Join("<br />", allAlbums.Select(album => album.ToHtmlAll()).ToList());
+            }
+
+            return this.View();
+
         }
 
         [Authorize]
@@ -72,19 +69,16 @@ namespace IRunes.App.Controllers
         {
             string albumId = this.Request.QueryData["id"].ToString();
 
-            using (var context = new RunesDbContext())
+            Album albumFromDb = this.albumService.GetAlbumById(albumId);
+
+            if (albumFromDb == null)
             {
-                Album albumFromDb = this.albumService.GetAlbumById(albumId);
-
-                if (albumFromDb == null)
-                {
-                    return this.Redirect("/Albums/All");
-                }
-
-                this.ViewData["Album"] = albumFromDb.ToHtmlDetails();
-
-                return this.View();
+                return this.Redirect("/Albums/All");
             }
+
+            this.ViewData["Album"] = albumFromDb.ToHtmlDetails();
+
+            return this.View();
         }
     }
 }

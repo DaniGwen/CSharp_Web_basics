@@ -1,7 +1,7 @@
 ﻿using IRunes.App.Models;
 using System.Collections.Generic;
 
-namespace IRunes.Services
+namespace IRunes.Services.Contracts
 {
     public interface IAlbumService
     {

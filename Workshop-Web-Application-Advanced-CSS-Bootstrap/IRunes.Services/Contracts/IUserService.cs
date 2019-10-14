@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace IRunes.Services
+namespace IRunes.Services.Contracts
 {
     public interface IUserService
     {

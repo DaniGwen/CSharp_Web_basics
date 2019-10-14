@@ -1,10 +1,9 @@
 ﻿using IRunes.App.Data;
 using IRunes.App.Models;
+using IRunes.Services.Contracts;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace IRunes.Services
 {
