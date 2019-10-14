@@ -8,7 +8,6 @@
     ".NETCoreApp,Version=v2.1": {
       "IRunes.App/1.0.0": {
         "dependencies": {
-          "IRunes.Data": "1.0.0",
           "IRunes.Models": "1.0.0",
           "IRunes.Services": "1.0.0",
           "Microsoft.EntityFrameworkCore": "2.2.0",

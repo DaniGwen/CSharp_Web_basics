@@ -30,9 +30,6 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Data\\IRunes.Data.csproj": {
-                "projectPath": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Data\\IRunes.Data.csproj"
-              },
               "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Models\\IRunes.Models.csproj": {
                 "projectPath": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Models\\IRunes.Models.csproj"
               },

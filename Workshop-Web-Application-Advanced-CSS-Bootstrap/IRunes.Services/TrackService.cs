@@ -17,14 +17,6 @@ namespace IRunes.Services
             this.context = new RunesDbContext();
         }
 
-        public Track CreateTrack(Track track)
-        {
-            track = this.context.Tracks.Add(track).Entity;
-            this.context.SaveChanges();
-
-            return track;
-        }
-
         public Track GetTrackById(string id)
         {
             var track = this.context.Tracks.SingleOrDefault(t => t.Id == id);

@@ -16,10 +16,27 @@ namespace IRunes.Services
             this.context = new RunesDbContext();
         }
 
+        public bool AddTrackToAlbum(string albumId, Track trackForDb)
+        {
+            var album = this.GetAlbumById(albumId);
+
+            if (album == null)
+            {
+                return false;
+            }
+
+            album.Tracks.Add(trackForDb);
+            album.Price = (album.Tracks.Select(track => track.Price).Sum() * 87) / 100;
+            context.Update(album);
+            context.SaveChanges();
+
+            return true;
+        }
+
         public Album CreateAlbum(Album album)
         {
-                album = context.Albums.Add(album).Entity;
-                context.SaveChanges();
+            album = context.Albums.Add(album).Entity;
+            context.SaveChanges();
 
             return album;
         }
