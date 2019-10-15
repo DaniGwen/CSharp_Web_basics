@@ -1,5 +1,6 @@
 ﻿using IRunes.App.Extensions;
 using IRunes.App.Models;
+using IRunes.App.ViewModels;
 using IRunes.Services;
 using IRunes.Services.Contracts;
 using SIS.MvcFramework;
@@ -32,7 +33,7 @@ namespace IRunes.App.Controllers
             else
             {
                 this.ViewData["Albums"] = string
-                    .Join("<br />", allAlbums.Select(album => album.ToHtmlAll()).ToList());
+                    .Join("<br />", allAlbums.Select(album => album.ToHtmlAll()).ToList().To<AlbumViewModel>());
             }
 
             return this.View();
