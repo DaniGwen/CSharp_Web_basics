@@ -49,7 +49,7 @@ namespace SIS.MvcFramework
 
         private string ParseTemplate(string viewContent)
         {
-            foreach (var param in ViewData)
+            foreach (var param in this.ViewData)
             {
                 viewContent = viewContent.Replace($"@Model.{param.Key}", param.Value.ToString());
             }
@@ -60,11 +60,18 @@ namespace SIS.MvcFramework
         //Takes the name of the calling method    
         protected ActionResult View([CallerMemberName] string view = null)
         {
-            string controllerName = GetType().Name.Replace("Controller", string.Empty);
+            string controllerName = this.GetType().Name.Replace("Controller", string.Empty);
             string viewName = view;
-            string viewContent = System.IO.File.ReadAllText("Views/" + controllerName + "/" + viewName + ".html");
-            viewContent = ParseTemplate(viewContent);
-            HtmlResult htmlResult = new HtmlResult(viewContent, HttpResponseStatusCode.Ok);
+
+            string viewContent = System.IO.File
+                .ReadAllText("Views/" + controllerName + "/" + viewName + ".html");
+            viewContent = this.ParseTemplate(viewContent);
+
+            string layoutContent = System.IO.File.ReadAllText("Views/_Layout.html");
+            layoutContent = this.ParseTemplate(layoutContent);
+             layoutContent = layoutContent.Replace("@RenderBody()", viewContent); 
+           
+            HtmlResult htmlResult = new HtmlResult(layoutContent);
 
             return htmlResult;
         }

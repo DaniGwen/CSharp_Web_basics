@@ -9,6 +9,7 @@ using SIS.MvcFramework.Attributes.Security;
 using SIS.MvcFramework.Result;
 using System.Collections.Generic;
 using System.Linq;
+using SIS.MvcFramework.Mapping;
 
 namespace IRunes.App.Controllers
 {
@@ -33,11 +34,11 @@ namespace IRunes.App.Controllers
             else
             {
                 this.ViewData["Albums"] = string
-                    .Join("<br />", allAlbums.Select(album => album.ToHtmlAll()).ToList().To<AlbumViewModel>());
+                    .Join("<br />", allAlbums.Select(album => album.ToHtmlAll())
+                    .ToList()
+                    .To<AlbumViewModel>());
             }
-
             return this.View();
-
         }
 
         [Authorize]
