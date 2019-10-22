@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Data\\IRunes.Data.csproj": {}
+    "C:\\Users\\deko\\Documents\\GitHub\\CSharp_Web_basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Data\\IRunes.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Data\\IRunes.Data.csproj": {
+    "C:\\Users\\deko\\Documents\\GitHub\\CSharp_Web_basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Data\\IRunes.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Data\\IRunes.Data.csproj",
+        "projectUniqueName": "C:\\Users\\deko\\Documents\\GitHub\\CSharp_Web_basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Data\\IRunes.Data.csproj",
         "projectName": "IRunes.Data",
-        "projectPath": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Data\\IRunes.Data.csproj",
-        "packagesPath": "C:\\Users\\thinkpad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Data\\obj\\",
+        "projectPath": "C:\\Users\\deko\\Documents\\GitHub\\CSharp_Web_basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Data\\IRunes.Data.csproj",
+        "packagesPath": "C:\\Users\\deko\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\deko\\Documents\\GitHub\\CSharp_Web_basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\thinkpad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\deko\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Models\\IRunes.Models.csproj": {
-                "projectPath": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Models\\IRunes.Models.csproj"
+              "C:\\Users\\deko\\Documents\\GitHub\\CSharp_Web_basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Models\\IRunes.Models.csproj": {
+                "projectPath": "C:\\Users\\deko\\Documents\\GitHub\\CSharp_Web_basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Models\\IRunes.Models.csproj"
               }
             }
           }
@@ -61,27 +61,33 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Models\\IRunes.Models.csproj": {
+    "C:\\Users\\deko\\Documents\\GitHub\\CSharp_Web_basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Models\\IRunes.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Models\\IRunes.Models.csproj",
+        "projectUniqueName": "C:\\Users\\deko\\Documents\\GitHub\\CSharp_Web_basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Models\\IRunes.Models.csproj",
         "projectName": "IRunes.Models",
-        "projectPath": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Models\\IRunes.Models.csproj",
-        "packagesPath": "C:\\Users\\thinkpad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\thinkpad\\Documents\\GitHub\\C# Web basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Models\\obj\\",
+        "projectPath": "C:\\Users\\deko\\Documents\\GitHub\\CSharp_Web_basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Models\\IRunes.Models.csproj",
+        "packagesPath": "C:\\Users\\deko\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\deko\\Documents\\GitHub\\CSharp_Web_basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\IRunes.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\thinkpad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\deko\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -113,10 +119,16 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

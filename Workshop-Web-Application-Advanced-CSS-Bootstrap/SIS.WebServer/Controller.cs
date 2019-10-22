@@ -50,24 +50,8 @@ namespace SIS.MvcFramework
         {
             foreach (var param in this.ViewData)
             {
-
-                if (param.Key == "Username")
-                {
-                    var principal = (Principal)param.Value;
-
-                    viewContent = viewContent
-                    .Replace($"@Model.{param.Key}", principal.Username);
-                }
-                else if (param.Key == "Albums")
-                {
-                    viewContent = viewContent
-                    .Replace($"@Model.{param.Key}", param.Value.ToString());
-                }
-
-                viewContent = viewContent
-                    .Replace($"@Model.{param.Key}", param.Value.ToString());
+                viewContent = viewContent.Replace($"@Model.{param.Key}", param.Value.ToString());
             }
-
             return viewContent;
         }
 

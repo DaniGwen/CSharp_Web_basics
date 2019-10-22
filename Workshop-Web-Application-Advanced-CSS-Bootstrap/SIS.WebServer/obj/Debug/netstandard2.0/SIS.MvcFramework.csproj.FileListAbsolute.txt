@@ -10,3 +10,14 @@ C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanc
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.WebServer\obj\Debug\netstandard2.0\SIS.MvcFramework.csproj.CopyComplete
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.WebServer\obj\Debug\netstandard2.0\SIS.MvcFramework.dll
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.WebServer\obj\Debug\netstandard2.0\SIS.MvcFramework.pdb
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.WebServer\bin\Debug\netstandard2.0\SIS.MvcFramework.deps.json
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.WebServer\bin\Debug\netstandard2.0\SIS.MvcFramework.dll
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.WebServer\bin\Debug\netstandard2.0\SIS.MvcFramework.pdb
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.WebServer\bin\Debug\netstandard2.0\SIS.HTTP.dll
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.WebServer\bin\Debug\netstandard2.0\SIS.HTTP.pdb
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.WebServer\obj\Debug\netstandard2.0\SIS.MvcFramework.csprojAssemblyReference.cache
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.WebServer\obj\Debug\netstandard2.0\SIS.MvcFramework.AssemblyInfoInputs.cache
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.WebServer\obj\Debug\netstandard2.0\SIS.MvcFramework.AssemblyInfo.cs
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.WebServer\obj\Debug\netstandard2.0\SIS.MvcFramework.csproj.CopyComplete
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.WebServer\obj\Debug\netstandard2.0\SIS.MvcFramework.dll
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.WebServer\obj\Debug\netstandard2.0\SIS.MvcFramework.pdb

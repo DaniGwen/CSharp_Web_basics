@@ -12,3 +12,16 @@ C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanc
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Services\obj\Debug\netcoreapp2.1\IRunes.Services.csproj.CopyComplete
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Services\obj\Debug\netcoreapp2.1\IRunes.Services.dll
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Services\obj\Debug\netcoreapp2.1\IRunes.Services.pdb
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Services\bin\Debug\netcoreapp2.1\IRunes.Services.deps.json
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Services\bin\Debug\netcoreapp2.1\IRunes.Services.dll
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Services\bin\Debug\netcoreapp2.1\IRunes.Services.pdb
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Services\bin\Debug\netcoreapp2.1\IRunes.Data.dll
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Services\bin\Debug\netcoreapp2.1\IRunes.Models.dll
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Services\bin\Debug\netcoreapp2.1\IRunes.Data.pdb
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Services\bin\Debug\netcoreapp2.1\IRunes.Models.pdb
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Services\obj\Debug\netcoreapp2.1\IRunes.Services.csprojAssemblyReference.cache
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Services\obj\Debug\netcoreapp2.1\IRunes.Services.AssemblyInfoInputs.cache
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Services\obj\Debug\netcoreapp2.1\IRunes.Services.AssemblyInfo.cs
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Services\obj\Debug\netcoreapp2.1\IRunes.Services.csproj.CopyComplete
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Services\obj\Debug\netcoreapp2.1\IRunes.Services.dll
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Services\obj\Debug\netcoreapp2.1\IRunes.Services.pdb

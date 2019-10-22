@@ -1,12 +1,9 @@
-﻿using IRunes.App.Data;
+﻿using Apps.IRunes.Services.Contracts;
+using IRunes.App.Data;
 using IRunes.App.Models;
-using IRunes.Services.Contracts;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace IRunes.Services
+namespace Apps.IRunes.Services
 {
     public class TrackService : ITrackService
     {

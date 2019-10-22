@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace IRunes.Services.Contracts
+namespace Apps.IRunes.Services.Contracts
 {
     public interface ITrackService
     {

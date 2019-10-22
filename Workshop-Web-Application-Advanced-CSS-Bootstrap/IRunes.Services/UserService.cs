@@ -1,9 +1,9 @@
-﻿using IRunes.App.Data;
+﻿using Apps.IRunes.Services.Contracts;
+using IRunes.App.Data;
 using IRunes.App.Models;
-using IRunes.Services.Contracts;
 using System.Linq;
 
-namespace IRunes.Services
+namespace Apps.IRunes.Services
 {
     public class UserService : IUserService
     {

@@ -7,3 +7,11 @@ C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanc
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Models\obj\Debug\netcoreapp2.1\IRunes.Models.AssemblyInfo.cs
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Models\obj\Debug\netcoreapp2.1\IRunes.Models.dll
 C:\Users\thinkpad\Documents\GitHub\C# Web basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Models\obj\Debug\netcoreapp2.1\IRunes.Models.pdb
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Models\bin\Debug\netcoreapp2.1\IRunes.Models.deps.json
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Models\bin\Debug\netcoreapp2.1\IRunes.Models.dll
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Models\bin\Debug\netcoreapp2.1\IRunes.Models.pdb
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Models\obj\Debug\netcoreapp2.1\IRunes.Models.csprojAssemblyReference.cache
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Models\obj\Debug\netcoreapp2.1\IRunes.Models.AssemblyInfoInputs.cache
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Models\obj\Debug\netcoreapp2.1\IRunes.Models.AssemblyInfo.cs
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Models\obj\Debug\netcoreapp2.1\IRunes.Models.dll
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.Models\obj\Debug\netcoreapp2.1\IRunes.Models.pdb
