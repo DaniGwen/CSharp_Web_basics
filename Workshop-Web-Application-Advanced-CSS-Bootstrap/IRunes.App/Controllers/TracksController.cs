@@ -1,18 +1,13 @@
-﻿using IRunes.App.Data;
+﻿using Apps.IRunes.Services;
+using Apps.IRunes.Services.Contracts;
 using IRunes.App.Extensions;
 using IRunes.App.Models;
-using IRunes.Services;
-using IRunes.Services.Contracts;
-using SIS.HTTP.Requests;
-using SIS.HTTP.Responses;
 using SIS.MvcFramework;
 using SIS.MvcFramework.Attributes;
 using SIS.MvcFramework.Attributes.Security;
 using SIS.MvcFramework.Result;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace IRunes.App.Controllers
 {

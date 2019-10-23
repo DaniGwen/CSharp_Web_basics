@@ -1,11 +1,13 @@
-﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+﻿@DateTime.UtcNow.Year
+@for (int i = 1 ; i <= 3 ; i++)
+    {
+        @foreach (var num in Enumerable.Range(101,5))
+            {
+                @if(num % 2 == 0)
+                {
+                    <div>
+                        <span>@i</span> - <span>@num</span>
+                    </div>
+                }
+            }
+    }
