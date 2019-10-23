@@ -2,11 +2,16 @@
 
 namespace SIS.MvcFramework.Tests
 {
-    class Program
+    using Xunit;
+    public class Program
     {
-        static void Main()
+       
+
+        [Fact]
+        public void SumNumbers()
         {
-           
+            Assert.Equal(10, 5 + 7);
+
         }
     }
 }
