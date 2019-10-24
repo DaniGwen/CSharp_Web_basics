@@ -2,6 +2,7 @@
 using Apps.IRunes.Services.Contracts;
 using IRunes.App.Extensions;
 using IRunes.App.Models;
+using IRunes.App.ViewModels;
 using SIS.MvcFramework;
 using SIS.MvcFramework.Attributes;
 using SIS.MvcFramework.Attributes.Security;
@@ -73,7 +74,7 @@ namespace IRunes.App.Controllers
             this.ViewData["Track"] = trackFromDb.ToHtmlDetails();
             this.ViewData["AlbumId"] = albumId;
 
-            return this.View();
+            return this.View(new AlbumDetailsViewModel { albumId = albumId });
         }
     }
 }

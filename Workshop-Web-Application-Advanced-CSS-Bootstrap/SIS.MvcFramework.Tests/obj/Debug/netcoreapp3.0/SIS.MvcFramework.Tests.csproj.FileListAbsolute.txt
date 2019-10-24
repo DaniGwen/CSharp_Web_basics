@@ -98,3 +98,9 @@ C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanc
 C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.MvcFramework.Tests\bin\Debug\netcoreapp3.0\SIS.MvcFramework.dll
 C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.MvcFramework.Tests\bin\Debug\netcoreapp3.0\SIS.MvcFramework.pdb
 C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.MvcFramework.Tests\bin\Debug\netcoreapp3.0\SIS.HTTP.pdb
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.MvcFramework.Tests\bin\Debug\netcoreapp3.0\ViewTests\TestWithoutCSharpCode.html
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.MvcFramework.Tests\bin\Debug\netcoreapp3.0\ViewTests\TestWithoutCSharpCode.Result.html
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.MvcFramework.Tests\bin\Debug\netcoreapp3.0\ViewTests\UseForForeachAndIf.html
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.MvcFramework.Tests\bin\Debug\netcoreapp3.0\ViewTests\UseForForeachAndIf.Result.html
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.MvcFramework.Tests\bin\Debug\netcoreapp3.0\ViewTests\UseModelData.html
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.MvcFramework.Tests\bin\Debug\netcoreapp3.0\ViewTests\UseModelData.Result.html

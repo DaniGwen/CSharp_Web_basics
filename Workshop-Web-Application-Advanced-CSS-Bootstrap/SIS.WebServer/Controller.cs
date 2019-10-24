@@ -4,27 +4,28 @@ using SIS.MvcFramework.Identity;
 using SIS.MvcFramework.Result;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using System.Linq;
+using SIS.MvcFramework.ViewEngine;
 
 namespace SIS.MvcFramework
 {
     public abstract class Controller
     {
+        private IViewEngine viewEngine = new SisViewEngine();
         public object Htmlresult { get; private set; }
+
+        public IHttpRequest Request { get; set; }
+
+        protected Dictionary<string, object> ViewData;
 
         protected Controller()
         {
             ViewData = new Dictionary<string, object>();
         }
 
-        protected Dictionary<string, object> ViewData;
-
         public Principal User =>
             this.Request.Session.ContainsParameter("principal")
             ? (Principal)this.Request.Session.GetParameter("principal")
             : null;
-
-        public IHttpRequest Request { get; set; }
 
         protected bool IsLoggedIn()
         {
@@ -46,27 +47,23 @@ namespace SIS.MvcFramework
             this.Request.Session.ClearParameters();
         }
 
-        private string ParseTemplate(string viewContent)
+        protected ActionResult View([CallerMemberName] string view = null)
         {
-            foreach (var param in this.ViewData)
-            {
-                viewContent = viewContent.Replace($"@Model.{param.Key}", param.Value.ToString());
-            }
-            return viewContent;
+            return this.View<object>(null, view);
         }
 
-        //Takes the name of the calling method    
-        protected ActionResult View([CallerMemberName] string view = null)
+        protected ActionResult View<T>(T model = null, [CallerMemberName] string view = null)
+        where T : class
         {
             string controllerName = this.GetType().Name.Replace("Controller", string.Empty);
             string viewName = view;
 
             string viewContent = System.IO.File
                 .ReadAllText("Views/" + controllerName + "/" + viewName + ".html");
-            viewContent = this.ParseTemplate(viewContent);
+            viewContent = this.viewEngine.GetHtml(viewContent, model);
 
             string layoutContent = System.IO.File.ReadAllText("Views/_Layout.html");
-            layoutContent = this.ParseTemplate(layoutContent);
+            layoutContent = this.viewEngine.GetHtml(layoutContent, model);
             layoutContent = layoutContent.Replace("@RenderBody()", viewContent);
 
             HtmlResult htmlResult = new HtmlResult(layoutContent);

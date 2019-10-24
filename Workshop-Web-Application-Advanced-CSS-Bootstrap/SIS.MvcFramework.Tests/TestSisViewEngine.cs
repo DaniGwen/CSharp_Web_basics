@@ -1,6 +1,7 @@
 ﻿namespace SIS.MvcFramework.Tests
 {
     using SIS.MvcFramework.ViewEngine;
+    using System.Collections.Generic;
     using System.IO;
     using Xunit;
     public class TestSisViewEngine
@@ -19,7 +20,16 @@
             var viewContent = File.ReadAllText(viewFileName);
             var expectedResult = File.ReadAllText(expectedResultFileName);
 
-            var actualResult = viewEngine.GetHtml<object>(viewContent, null);
+            var actualResult = viewEngine.GetHtml<object>(viewContent, new TestViewModel()
+            {
+                StringValue = "str",
+                ListValues = new List<string>
+                {
+                    "val1",
+                    "123",
+                    string.Empty
+                }
+            });
             Assert.Equal(expectedResult, actualResult);
         }
     }
