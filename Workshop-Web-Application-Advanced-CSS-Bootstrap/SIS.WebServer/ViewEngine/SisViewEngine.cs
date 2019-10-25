@@ -52,6 +52,8 @@ namespace SIS.MvcFramework.ViewEngine
                     .CreateFromFile(Assembly.Load(assembly).Location));
             }
 
+            compilation = compilation.AddSyntaxTrees(SyntaxFactory.ParseSyntaxTree(code));
+            compilation.Emit("a.dll");
             return null;
         }
 
