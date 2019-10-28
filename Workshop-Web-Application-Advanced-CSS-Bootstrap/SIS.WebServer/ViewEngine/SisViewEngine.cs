@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace SIS.MvcFramework.ViewEngine
 {
@@ -121,16 +122,19 @@ namespace SIS.MvcFramework.ViewEngine
                     }
                     else
                     {
-                        var cSharpStringToAppend = string.Empty;
+                        var cSharpStringToAppend = "html.AppendLine(@\"";
                         while (line.Contains("@"))
                         {
-
+                            var atSignLocation = line.IndexOf("@");
+                            var plainText = line.Substring(0, atSignLocation);
+                            Regex cSharpCodeRegex = new Regex(@"[^\s<""]+", RegexOptions.Compiled);
+                            var cSharpExpression = cSharpCodeRegex.Match(line)?.Value;
+                            cSharpStringToAppend += plainText + "\" + " + cSharpExpression +"@\"";
                         }
-                        cSharpStringToAppend = $"";
-                        var cSharpLine = $"html.AppendLine({cSharpStringToAppend});";
-                        cSharpCode.AppendLine(cSharpLine);
+                        cSharpStringToAppend += "\");";
+                        cSharpCode.AppendLine(cSharpStringToAppend);
                     }
-                  
+
                 }
                 return cSharpCode.ToString();
             }
