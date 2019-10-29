@@ -30,7 +30,7 @@
                     string.Empty
                 }
             });
-            Assert.Equal(expectedResult, actualResult);
+            Assert.Equal(expectedResult.TrimEnd(), actualResult.TrimEnd());
         }
     }
 }
