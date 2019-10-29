@@ -3,6 +3,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading.Tasks;
 using SIS.HTTP.Common;
+using SIS.MvcFramework.Sessions;
 using SIS.WebServer.Routing;
 
 namespace SIS.MvcFramework
@@ -15,23 +16,26 @@ namespace SIS.MvcFramework
 
         private readonly TcpListener tcpListener;
 
-        private IServerRoutingTable serverRoutingTable;
+        private readonly IServerRoutingTable serverRoutingTable;
+
+        private readonly IHttpSessionStorage httpSessionStorage;
 
         private bool isRunning;
 
-        public Server(int port, IServerRoutingTable serverRoutingTable)
+        public Server(int port, IServerRoutingTable serverRoutingTable, IHttpSessionStorage httpSessionStorage)
         {
-            CoreValidator.ThrowIfNull(serverRoutingTable, nameof(serverRoutingTable));
+            CoreValidator.ThrowIfNull(this.serverRoutingTable, nameof(this.serverRoutingTable));
+            CoreValidator.ThrowIfNull(this.httpSessionStorage, nameof(this.httpSessionStorage));
 
             this.port = port;
             this.serverRoutingTable = serverRoutingTable;
-
             tcpListener = new TcpListener(IPAddress.Parse(LocalHostIpAddress), port);
+            this.httpSessionStorage = httpSessionStorage;
         }
 
         private async Task ListenAsync(Socket client)
         {
-            var connectionHandler = new ConnectionHandler(client, serverRoutingTable);
+            var connectionHandler = new ConnectionHandler(client, this.serverRoutingTable, this.httpSessionStorage);
             await connectionHandler.ProcessRequestAsync();
         }
 

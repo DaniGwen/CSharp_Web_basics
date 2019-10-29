@@ -14,6 +14,7 @@ namespace SIS.HTTP.Sessions
         }
 
         public string Id { get; }
+        public bool IsNew { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
         public object GetParameter(string parameterName)
         {
