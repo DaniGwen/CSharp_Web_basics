@@ -1,0 +1,8 @@
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.Common\bin\Debug\netcoreapp3.0\SIS.Common.deps.json
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.Common\bin\Debug\netcoreapp3.0\SIS.Common.dll
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.Common\bin\Debug\netcoreapp3.0\SIS.Common.pdb
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.Common\obj\Debug\netcoreapp3.0\SIS.Common.csprojAssemblyReference.cache
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.Common\obj\Debug\netcoreapp3.0\SIS.Common.AssemblyInfoInputs.cache
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.Common\obj\Debug\netcoreapp3.0\SIS.Common.AssemblyInfo.cs
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.Common\obj\Debug\netcoreapp3.0\SIS.Common.dll
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.Common\obj\Debug\netcoreapp3.0\SIS.Common.pdb
