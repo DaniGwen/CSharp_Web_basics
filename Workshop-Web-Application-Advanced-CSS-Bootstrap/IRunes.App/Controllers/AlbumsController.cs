@@ -27,17 +27,11 @@ namespace IRunes.App.Controllers
         {
             ICollection<Album> allAlbums = this.albumService.GetAllAlbums();
 
-            if (allAlbums.Count == 0)
+            if (allAlbums.Count != 0)
             {
-                this.ViewData["Albums"] = "There are currently no albums.";
+                return this.View(allAlbums.Select(ModelMapper.ProjectTo<AlbumAllViewModel>).ToList());
             }
-            else
-            {
-                this.ViewData["Albums"] = string
-                    .Join("<br />", allAlbums.Select(album => album.ToHtmlAll())
-                    .ToList()
-                    .To<AlbumViewModel>());
-            }
+           
             return this.View();
         }
 
