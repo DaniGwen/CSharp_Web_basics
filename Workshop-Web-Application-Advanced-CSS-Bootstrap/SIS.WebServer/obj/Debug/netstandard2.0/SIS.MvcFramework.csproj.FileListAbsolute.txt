@@ -21,3 +21,5 @@ C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanc
 C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.WebServer\obj\Debug\netstandard2.0\SIS.MvcFramework.csproj.CopyComplete
 C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.WebServer\obj\Debug\netstandard2.0\SIS.MvcFramework.dll
 C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.WebServer\obj\Debug\netstandard2.0\SIS.MvcFramework.pdb
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.WebServer\bin\Debug\netstandard2.0\SIS.Common.dll
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.WebServer\bin\Debug\netstandard2.0\SIS.Common.pdb

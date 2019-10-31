@@ -71,3 +71,5 @@ C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanc
 C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\obj\Debug\netcoreapp2.1\IRunes.App.csproj.CopyComplete
 C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\obj\Debug\netcoreapp2.1\IRunes.App.dll
 C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\obj\Debug\netcoreapp2.1\IRunes.App.pdb
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\SIS.Common.dll
+C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\IRunes.App\bin\Debug\netcoreapp2.1\SIS.Common.pdb

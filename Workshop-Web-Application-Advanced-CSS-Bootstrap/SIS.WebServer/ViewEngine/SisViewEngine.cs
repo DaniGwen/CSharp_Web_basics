@@ -27,7 +27,7 @@ namespace SIS.MvcFramework.ViewEngine
                        {{
                            public string GetHtml(object model)
                            {{
-                               var Model = model as {model.GetType().FullName};
+                               var Model = {(model == null ? "new {}" : ("model as " + model.GetType().FullName))};
                                var html = new StringBuilder();
                    
                                 {cSharpHtmlCode}
@@ -38,13 +38,15 @@ namespace SIS.MvcFramework.ViewEngine
                    }}
                    ";
 
-            var view = CompileAndInstance(code, model.GetType().Assembly);
+            var view = this.CompileAndInstance(code, model?.GetType().Assembly);
             var htmlResult = view?.GetHtml(model);
             return htmlResult;
         }
 
         private IView CompileAndInstance(string code, Assembly modelAssembly)
         {
+            modelAssembly = modelAssembly == null ? Assembly.GetEntryAssembly() : modelAssembly;
+
             var compilation = CSharpCompilation.Create("AppViewAssembly")
                 .WithOptions(new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary))
                 .AddReferences(MetadataReference.CreateFromFile(typeof(object).Assembly.Location))
@@ -97,7 +99,7 @@ namespace SIS.MvcFramework.ViewEngine
         private string GetCSharpCode(string viewContent)
         {
             string[] lines = viewContent.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
-            var cSharpCode = new StringBuilder();
+            var csharpCode = new StringBuilder();
             var supportedOperators = new[] { "for", "if", "else" };
 
             foreach (var line in lines)
@@ -105,14 +107,14 @@ namespace SIS.MvcFramework.ViewEngine
                 if (line.TrimStart().StartsWith("{") || line.TrimStart().StartsWith("}"))
                 {
                     // { / }
-                    cSharpCode.Append(line);
+                    csharpCode.Append(line);
                 }
                 else if (supportedOperators.Any(x => line.TrimStart().StartsWith("@" + x)))
                 {
                     // @C#
                     var atSignLocation = line.IndexOf("@");
                     var cSharpLine = line.Remove(atSignLocation, 1);
-                    cSharpCode.AppendLine(cSharpLine);
+                    csharpCode.AppendLine(cSharpLine);
                 }
                 else
                 {
@@ -120,7 +122,12 @@ namespace SIS.MvcFramework.ViewEngine
                     if (!line.Contains("@"))
                     {
                         var cSharpLine = $"html.AppendLine(@\"{line.Replace("\"", "\"\"")}\");";
-                        cSharpCode.AppendLine(cSharpLine);
+                        csharpCode.AppendLine(cSharpLine);
+                    }
+                    else if (line.Contains("@RenderBody()"))
+                    {
+                        var csharpLine = $"html.AppendLine(@\"{line}\");";
+                        csharpCode.AppendLine(csharpLine);
                     }
                     else
                     {
@@ -137,11 +144,11 @@ namespace SIS.MvcFramework.ViewEngine
                             restOfLine = restOfLine.Substring(atSignLocation + cSharpExpression.Length + 1);
                         }
                         cSharpStringToAppend += $"{restOfLine}\");";
-                        cSharpCode.AppendLine(cSharpStringToAppend);
+                        csharpCode.AppendLine(cSharpStringToAppend);
                     }
                 }
             }
-            return cSharpCode.ToString();
+            return csharpCode.ToString();
         }
     }
 }

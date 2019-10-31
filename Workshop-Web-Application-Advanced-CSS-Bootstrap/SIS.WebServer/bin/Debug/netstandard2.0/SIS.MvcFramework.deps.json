@@ -12,6 +12,7 @@
           "Microsoft.CodeAnalysis.CSharp": "3.3.1",
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.2",
+          "SIS.Common": "1.0.0",
           "SIS.HTTP": "1.0.0"
         },
         "runtime": {
@@ -221,7 +222,15 @@
           }
         }
       },
+      "SIS.Common/1.0.0": {
+        "runtime": {
+          "SIS.Common.dll": {}
+        }
+      },
       "SIS.HTTP/1.0.0": {
+        "dependencies": {
+          "SIS.Common": "1.0.0"
+        },
         "runtime": {
           "SIS.HTTP.dll": {}
         }
@@ -331,6 +340,11 @@
       "sha512": "sha512-+MvhNtcvIbqmhANyKu91jQnvIRVSTiaOiFNfKWwXGHG48YAb4I/TyH8spsySiPYla7gKal5ZnF3teJqZAximyQ==",
       "path": "system.threading.tasks.extensions/4.5.3",
       "hashPath": "system.threading.tasks.extensions.4.5.3.nupkg.sha512"
+    },
+    "SIS.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "SIS.HTTP/1.0.0": {
       "type": "project",

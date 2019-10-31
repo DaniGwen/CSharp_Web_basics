@@ -666,7 +666,15 @@
           "IRunes.Services.dll": {}
         }
       },
+      "SIS.Common/1.0.0": {
+        "runtime": {
+          "SIS.Common.dll": {}
+        }
+      },
       "SIS.HTTP/1.0.0": {
+        "dependencies": {
+          "SIS.Common": "1.0.0"
+        },
         "runtime": {
           "SIS.HTTP.dll": {}
         }
@@ -675,6 +683,7 @@
         "dependencies": {
           "Microsoft.CodeAnalysis.CSharp": "3.3.1",
           "Newtonsoft.Json": "12.0.2",
+          "SIS.Common": "1.0.0",
           "SIS.HTTP": "1.0.0"
         },
         "runtime": {
@@ -1141,6 +1150,11 @@
       "sha512": ""
     },
     "IRunes.Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SIS.Common/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

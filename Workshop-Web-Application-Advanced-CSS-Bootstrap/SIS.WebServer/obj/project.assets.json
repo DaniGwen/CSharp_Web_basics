@@ -245,9 +245,22 @@
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
+      "SIS.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/SIS.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SIS.Common.dll": {}
+        }
+      },
       "SIS.HTTP/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "SIS.Common": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/SIS.HTTP.dll": {}
         },
@@ -786,6 +799,11 @@
         "version.txt"
       ]
     },
+    "SIS.Common/1.0.0": {
+      "type": "project",
+      "path": "../SIS.Common/SIS.Common.csproj",
+      "msbuildProject": "../SIS.Common/SIS.Common.csproj"
+    },
     "SIS.HTTP/1.0.0": {
       "type": "project",
       "path": "../SIS.HTTP/SIS.HTTP.csproj",
@@ -797,6 +815,7 @@
       "Microsoft.CodeAnalysis.CSharp >= 3.3.1",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 12.0.2",
+      "SIS.Common >= 1.0.0",
       "SIS.HTTP >= 1.0.0"
     ]
   },
@@ -830,6 +849,9 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
+            "C:\\Users\\deko\\Documents\\GitHub\\CSharp_Web_basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\SIS.Common\\SIS.Common.csproj": {
+              "projectPath": "C:\\Users\\deko\\Documents\\GitHub\\CSharp_Web_basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\SIS.Common\\SIS.Common.csproj"
+            },
             "C:\\Users\\deko\\Documents\\GitHub\\CSharp_Web_basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\SIS.HTTP\\SIS.HTTP.csproj": {
               "projectPath": "C:\\Users\\deko\\Documents\\GitHub\\CSharp_Web_basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\SIS.HTTP\\SIS.HTTP.csproj"
             }

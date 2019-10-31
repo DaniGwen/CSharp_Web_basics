@@ -10,16 +10,14 @@ namespace SIS.MvcFramework
 {
     public abstract class Controller
     {
-        private IViewEngine viewEngine = new SisViewEngine();
+        private IViewEngine viewEngine;
         public object Htmlresult { get; private set; }
 
         public IHttpRequest Request { get; set; }
 
-        protected Dictionary<string, object> ViewData;
-
         protected Controller()
         {
-            ViewData = new Dictionary<string, object>();
+            this.viewEngine = new SisViewEngine();  
         }
 
         public Principal User =>
