@@ -58,6 +58,7 @@ namespace SIS.MvcFramework
 
             string viewContent = System.IO.File
                 .ReadAllText("Views/" + controllerName + "/" + viewName + ".html");
+
             viewContent = this.viewEngine.GetHtml(viewContent, model);
 
             string layoutContent = System.IO.File.ReadAllText("Views/_Layout.html");

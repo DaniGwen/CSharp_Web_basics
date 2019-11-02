@@ -11,6 +11,15 @@ namespace SIS.MvcFramework.ViewEngine
 {
     public class SisViewEngine : IViewEngine
     {
+        private string GetModelType<T>(T model)
+        {
+            if (model is Enumerable)
+            {
+                return $"IEnumerable<{model.GetType().GetGenericArguments()[0].FullName}>";
+            }
+            return model.GetType().FullName;
+        }
+
         public string GetHtml<T>(string viewContent, T model)
         {
             string cSharpHtmlCode = GetCSharpCode(viewContent);
@@ -27,7 +36,7 @@ namespace SIS.MvcFramework.ViewEngine
                        {{
                            public string GetHtml(object model)
                            {{
-                               var Model = {(model == null ? "new {}" : ("model as " + model.GetType().FullName))};
+                               var Model = {(model == null ? "new {}" : "model as " + GetModelType(model))};
                                var html = new StringBuilder();
                    
                                 {cSharpHtmlCode}
@@ -51,6 +60,7 @@ namespace SIS.MvcFramework.ViewEngine
                 .WithOptions(new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary))
                 .AddReferences(MetadataReference.CreateFromFile(typeof(object).Assembly.Location))
                 .AddReferences(MetadataReference.CreateFromFile(typeof(IView).Assembly.Location))
+                .AddReferences(MetadataReference.CreateFromFile(Assembly.GetEntryAssembly().Location))
                 .AddReferences(MetadataReference.CreateFromFile(modelAssembly.Location));
 
             var netStandartAssembly = Assembly.Load(new AssemblyName("netstandard")).GetReferencedAssemblies();

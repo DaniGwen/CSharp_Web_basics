@@ -32,7 +32,7 @@ namespace IRunes.App.Controllers
                 return this.View(allAlbums.Select(ModelMapper.ProjectTo<AlbumAllViewModel>).ToList());
             }
            
-            return this.View();
+            return this.View(new List<AlbumAllViewModel>());
         }
 
         [Authorize]
@@ -64,17 +64,17 @@ namespace IRunes.App.Controllers
         public ActionResult Details()
         {
             string albumId = this.Request.QueryData["id"].ToString();
-
             Album albumFromDb = this.albumService.GetAlbumById(albumId);
+
+            AlbumDetailViewModel albumDetailViewModel = ModelMapper
+                .ProjectTo<AlbumDetailViewModel>(albumFromDb);
 
             if (albumFromDb == null)
             {
                 return this.Redirect("/Albums/All");
             }
 
-            this.ViewData["Album"] = albumFromDb.ToHtmlDetails();
-
-            return this.View();
+            return this.View(albumDetailViewModel);
         }
     }
 }
