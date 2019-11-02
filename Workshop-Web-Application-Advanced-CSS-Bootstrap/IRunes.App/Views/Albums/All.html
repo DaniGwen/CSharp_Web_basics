@@ -26,7 +26,7 @@
     <a class="btn bg-success text-white" href="/Albums/Create">Create Album</a>
     <hr class="bg-success" style="height: 2px" />
     <div class="font-weight-bold text-xl-left" id="albums">
-        @if(Model != null)
+        @if(typeof(IEnumerable<IRunes.App.ViewModels.AlbumAllViewModel>).IsAssignableFrom(Model.GetType())
         {
            @foreach(var album in Model)
              {
@@ -35,6 +35,5 @@
              </h3>
              }
         }
-        <h3>@Model.Albums</h3>
     </div>
 </main>
