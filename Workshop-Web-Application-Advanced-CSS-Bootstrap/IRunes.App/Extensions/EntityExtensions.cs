@@ -6,12 +6,6 @@ namespace IRunes.App.Extensions
 {
     public static class EntityExtensions
     {
-
-        public static string ToHtmlAll(this Track track, string albumId, int index)
-        {
-            return $"<li><strong>{index}</strong>.<a href=\"/Tracks/Details?albumId={albumId}&trackId={track.Id}\"> <i>{WebUtility.UrlDecode(track.Name)}</i></a></li>";
-        }
-
         public static string ToHtmlDetails(this Track track)
         {
             return $"<div class=\"track-details text-center\">" +

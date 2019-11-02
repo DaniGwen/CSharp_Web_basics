@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 
@@ -8,10 +9,8 @@ namespace SIS.MvcFramework.Mapping
 {
     public static class ModelMapper
     {
-        private static object MapProperty(object originInstance, object destinationInstance, PropertyInfo originProperty, PropertyInfo destinationProperty)
+        private static void MapProperty<T>(object originInstance, object destinationInstance, PropertyInfo originProperty, PropertyInfo destinationProperty, T destinationPropertyType)
         {
-            
-
             if (destinationProperty != null)
             {
                 if (destinationProperty.PropertyType == typeof(string))
@@ -27,21 +26,21 @@ namespace SIS.MvcFramework.Mapping
                         .GetType()
                         .GetGenericArguments()[0];
 
-                    List<object> destinationElements = new List<object>();
+                    var destinationCollection = (IList)Activator.CreateInstance(destinationProperty.PropertyType);
 
                     foreach (var originElement in originCollection)
                     {
-                        destinationElements.Add(MapObject(originElement, destinationElementType));
+                        destinationCollection.Add(MapObject(originElement, destinationElementType));
                     }
 
-                    destinationProperty.SetValue(destinationInstance, destinationElements);
+                    destinationProperty.SetValue(destinationInstance, destinationCollection);
                 }
                 else
                 {
-                    destinationProperty.SetValue(destinationInstance, originProperty.GetValue(origin));
+                    destinationProperty.SetValue(destinationInstance, originProperty.GetValue(originInstance));
                 }
             }
-        } 
+        }
 
         private static object MapObject(object origin, Type destinationType)
         {
@@ -51,14 +50,14 @@ namespace SIS.MvcFramework.Mapping
             {
                 string propertyName = originProperty.Name;
                 PropertyInfo destinationProperty = destinationInstance.GetType().GetProperty(propertyName);
+
+                MapProperty(origin, destinationInstance, originProperty, destinationProperty, destinationProperty?.PropertyType);
             }
             return destinationInstance;
         }
         public static TDestination ProjectTo<TDestination>(object origin)
         {
-            var destinationInstance = (TDestination)Activator.CreateInstance(typeof(TDestination));
-
-            return destinationInstance;
+            return (TDestination)MapObject(origin, typeof(TDestination));
         }
     }
 }
