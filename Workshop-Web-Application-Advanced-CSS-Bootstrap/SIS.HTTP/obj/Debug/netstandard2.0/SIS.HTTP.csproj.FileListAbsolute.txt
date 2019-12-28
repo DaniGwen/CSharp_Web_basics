@@ -15,6 +15,3 @@ C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanc
 C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.HTTP\obj\Debug\netstandard2.0\SIS.HTTP.dll
 C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.HTTP\obj\Debug\netstandard2.0\SIS.HTTP.pdb
 C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.HTTP\obj\Debug\netstandard2.0\SIS.HTTP.csprojAssemblyReference.cache
-C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.HTTP\bin\Debug\netstandard2.0\SIS.Common.dll
-C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.HTTP\bin\Debug\netstandard2.0\SIS.Common.pdb
-C:\Users\deko\Documents\GitHub\CSharp_Web_basics\Workshop-Web-Application-Advanced-CSS-Bootstrap\SIS.HTTP\obj\Debug\netstandard2.0\SIS.HTTP.csproj.CopyComplete

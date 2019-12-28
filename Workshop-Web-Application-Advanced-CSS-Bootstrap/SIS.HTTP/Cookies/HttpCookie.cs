@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Text;
 using SIS.Common;
-using SIS.HTTP.Common;
 
 namespace SIS.HTTP.Cookies
 {
     public class HttpCookie
     {
-        private const int HttpCookieDefaultExpirationDays = 2;
+        private const int HttpCookieDefaultExpirationDays = 3;
 
         private const string HttpCookieDefaultPath = "/";
 
@@ -26,6 +25,7 @@ namespace SIS.HTTP.Cookies
             this.Key = key;
             this.Value = value;
             this.Expires = DateTime.UtcNow.AddDays(expires);
+			this.Path = path;
         }
 
 

@@ -17,7 +17,6 @@ namespace SIS.HTTP.Headers
         {
             key.ThrowIfNullOrEmpty(nameof(key));
             value.ThrowIfNullOrEmpty(nameof(value));
-
             this.Key = key;
             this.Value = value;
         }

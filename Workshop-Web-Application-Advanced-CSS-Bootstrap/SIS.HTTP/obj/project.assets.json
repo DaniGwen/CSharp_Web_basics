@@ -25,16 +25,6 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
-      },
-      "SIS.Common/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "compile": {
-          "bin/placeholder/SIS.Common.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SIS.Common.dll": {}
-        }
       }
     }
   },
@@ -181,17 +171,11 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
-    },
-    "SIS.Common/1.0.0": {
-      "type": "project",
-      "path": "../SIS.Common/SIS.Common.csproj",
-      "msbuildProject": "../SIS.Common/SIS.Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.3",
-      "SIS.Common >= 1.0.0"
+      "NETStandard.Library >= 2.0.3"
     ]
   },
   "packageFolders": {
@@ -223,11 +207,7 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {
-            "C:\\Users\\deko\\Documents\\GitHub\\CSharp_Web_basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\SIS.Common\\SIS.Common.csproj": {
-              "projectPath": "C:\\Users\\deko\\Documents\\GitHub\\CSharp_Web_basics\\Workshop-Web-Application-Advanced-CSS-Bootstrap\\SIS.Common\\SIS.Common.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

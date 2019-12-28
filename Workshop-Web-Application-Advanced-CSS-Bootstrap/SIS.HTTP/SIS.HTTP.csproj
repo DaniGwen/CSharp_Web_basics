@@ -4,14 +4,4 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Responses\Parameters\**" />
-    <EmbeddedResource Remove="Responses\Parameters\**" />
-    <None Remove="Responses\Parameters\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\SIS.Common\SIS.Common.csproj" />
-  </ItemGroup>
-
 </Project>

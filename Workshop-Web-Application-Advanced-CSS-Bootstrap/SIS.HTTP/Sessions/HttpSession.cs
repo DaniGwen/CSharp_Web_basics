@@ -1,5 +1,6 @@
-﻿using SIS.Common;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using SIS.Common;
+using SIS.HTTP.Common;
 
 namespace SIS.HTTP.Sessions
 {
@@ -10,11 +11,13 @@ namespace SIS.HTTP.Sessions
         public HttpSession(string id)
         {
             this.Id = id;
+            this.IsNew = true;
             this.sessionParameters = new Dictionary<string, object>();
         }
 
         public string Id { get; }
-        public bool IsNew { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+
+        public bool IsNew { get; set; }
 
         public object GetParameter(string parameterName)
         {
